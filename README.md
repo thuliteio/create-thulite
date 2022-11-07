@@ -8,7 +8,7 @@ CLI for setting up a new Hyas project.
 
 ## Usage
 
-Run `create` command and follow the prompts.
+Run the following command, and follow the prompts.
 
 With npm:
 

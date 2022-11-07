@@ -8,27 +8,25 @@ CLI for setting up a new Hyas project.
 
 ## Usage
 
-Create a new Hyas project
+Run `create` command and follow the prompts.
 
-with npm:
+With npm:
 
 ```bash
 npm create hyas@latest
 ```
 
-with Yarn:
+With Yarn:
 
 ```bash
 yarn create hyas
 ```
 
-with pnpm:
+With pnpm:
 
 ```bash
 pnpm create hyas
 ```
-
-Then follow the prompts.
 
 ### Options
 
@@ -39,11 +37,11 @@ Use arguments for:
 
 #### Directory
 
-You can use `.` to scaffold in the current directory.
+Use `.` to scaffold in the current directory.
 
-#### Template
+#### Templates
 
-Currently, you can use:
+Currently:
 
 - `doks`
 - `bootstrap-starter`
@@ -74,23 +72,4 @@ With pnpm:
 
 ```bash
 pnpm create hyas my-doks-site --template doks-recommended
-```
-
-
-## Community Templates
-
-create-vite is a tool to quickly start a project from a basic template for popular frameworks. Check out Awesome Vite for [community maintained templates](https://github.com/vitejs/awesome-vite#templates) that include other tools or target different frameworks. You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the templates.
-
-```bash
-npx degit user/project my-project
-cd my-project
-
-npm install
-npm run dev
-```
-
-If the project uses `main` as the default branch, suffix the project repo with `#main`
-
-```bash
-npx degit user/project#main my-project
 ```

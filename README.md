@@ -32,14 +32,10 @@ pnpm create hyas
 
 Use arguments for:
 
-- the directory to create the project in
-- the template to use
+- the directory to create the project in (use `.` to scaffold in the current directory)
+- the template to use (add `-recommended` to include recommended plugins)
 
-#### Directory
-
-Use `.` to scaffold in the current directory.
-
-#### Templates
+### Templates
 
 Currently:
 
@@ -47,14 +43,16 @@ Currently:
 - `bootstrap-starter`
 - `no-theme`
 
-Add `-recommended` to include recommended plugins, currently:
+### Recommended plugins
+
+Currently:
 
 - [@hyas-seo](https://github.com/h-enk/hyas-seo)
 - [@hyas-images](https://github.com/h-enk/hyas-images)
 
-#### Example
+### Example
 
-For example, to scaffold a Doks project with recommended plugins, run:
+Run the following command to scaffold a Doks project with recommended plugins.
 
 With npm:
 

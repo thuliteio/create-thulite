@@ -28,10 +28,10 @@
     "preinfo": "npm version",
     "info": "npm list",
     "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
-    "postinstall": "shx mkdir node_modules/.bin/hugo && shx cp node_modules/hyas-module/node_modules/.bin/hugo/* node_modules/.bin/hugo"
+    "postinstall": "shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo"
   },
   "devDependencies": {
     "@hyas/themes-doks": "^0.1.2",
-    "gethyas": "^2.0.1"
+    "gethyas": "^2.0.2"
   }
 }

@@ -1,0 +1,47 @@
+{
+  "name": "create-hyas",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Henk Verlinde",
+  "bin": {
+    "create-hyas": "index.js",
+    "cha": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template-*",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "prepublishOnly": "npm run build",
+    "clean": "npm run clean:build && npm run clean:install",
+    "clean:build": "shx rm -rf dist",
+    "clean:install": "shx rm -rf package-lock.json node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gethyas/create-hyas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gethyas/create-hyas/issues"
+  },
+  "homepage": "https://github.com/gethyas/create-hyas",
+  "devDependencies": {
+    "auto-changelog": "^2.4.0",
+    "cross-spawn": "^7.0.3",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
+    "prompts": "^2.4.2",
+    "shx": "^0.3.4",
+    "unbuild": "^0.9.4"
+  }
+}

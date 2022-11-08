@@ -31,6 +31,6 @@
     "postinstall": "shx mkdir node_modules/.bin/hugo && shx cp node_modules/hyas-module/node_modules/.bin/hugo/* node_modules/.bin/hugo"
   },
   "devDependencies": {
-    "hyas": "^2.0.0"
+    "gethyas": "^2.0.1"
   }
 }

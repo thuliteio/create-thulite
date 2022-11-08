@@ -34,6 +34,6 @@
     "@hyas/images": "^0.3.2",
     "@hyas/seo": "^0.1.2",
     "@hyas/themes-doks": "^0.1.2",
-    "hyas": "^2.0.0"
+    "gethyas": "^2.0.1"
   }
 }

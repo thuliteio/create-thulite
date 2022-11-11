@@ -6,9 +6,6 @@ import minimist from 'minimist'
 import prompts from 'prompts'
 import {
   lightGray,
-  lightBlue,
-  lightCyan,
-  lightYellow,
   red,
   reset
 } from 'kolorist'
@@ -39,17 +36,17 @@ const FRAMEWORKS: Framework[] = [
   {
     name: 'doks',
     display: 'Doks',
-    color: lightCyan,
+    color: lightGray,
     variants: [
       {
         name: 'doks-recommended',
         display: 'Recommended',
-        color: lightYellow
+        color: lightGray
       },
       {
         name: 'doks',
         display: 'None',
-        color: lightBlue
+        color: lightGray
       }
     ]
   },
@@ -59,14 +56,19 @@ const FRAMEWORKS: Framework[] = [
     color: lightGray,
     variants: [
       {
+        name: 'bs-starter-full-control',
+        display: 'Full control',
+        color: lightGray
+      },
+      {
         name: 'bs-starter-recommended',
         display: 'Recommended',
-        color: lightYellow
+        color: lightGray
       },
       {
         name: 'bs-starter',
         display: 'None',
-        color: lightBlue
+        color: lightGray
       }
     ]
   },
@@ -78,12 +80,12 @@ const FRAMEWORKS: Framework[] = [
       {
         name: 'no-theme-recommended',
         display: 'Recommended',
-        color: lightYellow
+        color: lightGray
       },
       {
         name: 'no-theme',
         display: 'None',
-        color: lightBlue
+        color: lightGray
       }
     ]
   }

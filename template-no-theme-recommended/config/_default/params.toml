@@ -34,14 +34,31 @@ schemaTwitter = "https://twitter.com/gethyas"
 schemaLinkedIn = ""
 schemaGitHub = "https://github.com/h-enk/hyas"
 
-# lazyimg
+# Feed
+copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
+
+# Images
+
+## defaultImage
+defaultImage = "default-image.jpg" # put in `./assets/images/`
+
+## imaging
+[imaging]
+  anchor = 'Smart'
+  bgColor = '#fff'
+  hint = 'photo'
+  quality = 95
+  resampleFilter = 'Lanczos'
+
+## lazyimg
 [lazyimg]
   resizer = "auto"
   renderer = "lqip-webp"
 
   # Resizer options:
   lqipSize = "120x Gaussian"
-  maxSize = "1920x"
+  # maxSize = "1920x"
+  maxSize = "1366x"
   responsiveSizes = [ "320x", "640x", "768x", "1024x", "1366x", "1600x", "1920x" ]
   resizeOptions = "Lanczos q95"
 
@@ -51,6 +68,3 @@ schemaGitHub = "https://github.com/h-enk/hyas"
   noscript = true
 
   errorHandler = "warning"
-
-# Feed
-copyRight = "Copyright (c) 2020-2021 Henk Verlinde"

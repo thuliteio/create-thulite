@@ -8,7 +8,7 @@ module.exports = {
     purgecss({
       content: [
         './node_modules/@hyas/core/layouts/**/*.html',
-        // './layouts/**/*.html',
+        './layouts/**/*.html',
         './content/**/*.md',
       ],
       safelist: [

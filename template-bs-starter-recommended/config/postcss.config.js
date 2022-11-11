@@ -7,9 +7,12 @@ module.exports = {
     autoprefixer(),
     purgecss({
       content: [
-        // './node_modules/@hyas/core/layouts/**/*.html',
+        './node_modules/@hyas/core/layouts/**/*.html',
+        './node_modules/@hyas/seo/layouts/**/*.html',
+        './node_modules/@hyas/images/layouts/**/*.html',
         './node_modules/@hyas/themes-starter-bootstrap/layouts/**/*.html',
-        // './layouts/**/*.html',
+        './node_modules/@hyas/themes-starter-bootstrap/content/**/*.html',
+        './layouts/**/*.html',
         './content/**/*.md',
       ],
       safelist: [
@@ -25,7 +28,6 @@ module.exports = {
         'h3',
         'alert-link',
         ...whitelister([
-          // './node_modules/@hyas/core/assets/scss/app.scss',
           './node_modules/@hyas/themes-starter-bootstrap/assets/scss/components/_alerts.scss',
           './node_modules/@hyas/themes-starter-bootstrap/assets/scss/components/_code.scss',
         ]),

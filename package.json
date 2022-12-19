@@ -1,6 +1,6 @@
 {
   "name": "create-hyas",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "license": "MIT",
   "author": "Henk Verlinde",
@@ -11,6 +11,8 @@
   "files": [
     "index.js",
     "template-*",
+    "template-*/.npmrc",
+    "template-*/.gitignore",
     "dist"
   ],
   "main": "index.js",

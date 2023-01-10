@@ -7,7 +7,7 @@
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/hyas/assets"
+  source = "node_modules/gethyas/assets"
   target = "assets"
 
 [[mounts]]

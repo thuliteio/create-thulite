@@ -1,0 +1,47 @@
+[[mounts]]
+  source = "node_modules/@hyas/core/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/core/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/gethyas/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/bolt/archetypes"
+  target = "archetypes"
+
+[[mounts]]
+  source = "node_modules/@hyas/bolt/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/bolt/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "themes/bolt/archetypes"
+  target = "archetypes"
+
+[[mounts]]
+  source = "themes/bolt/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "themes/bolt/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "archetypes"
+  target = "archetypes"
+
+[[mounts]]
+  source = "assets"
+  target = "assets"
+
+[[mounts]]
+  source = "layouts"
+  target = "layouts"

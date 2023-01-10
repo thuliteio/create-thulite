@@ -34,6 +34,23 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
+    name: 'bolt',
+    display: 'Bolt',
+    color: lightGray,
+    variants: [
+      {
+        name: 'bolt-recommended',
+        display: 'Recommended',
+        color: lightGray
+      },
+      {
+        name: 'bolt',
+        display: 'None',
+        color: lightGray
+      }
+    ]
+  },
+  {
     name: 'doks',
     display: 'Doks',
     color: lightGray,

@@ -90,17 +90,17 @@ const FRAMEWORKS: Framework[] = [
     ]
   },
   {
-    name: 'no-theme',
-    display: 'None',
+    name: 'default-starter',
+    display: 'Default starter',
     color: lightGray,
     variants: [
       {
-        name: 'no-theme-recommended',
+        name: 'default-starter-recommended',
         display: 'Recommended',
         color: lightGray
       },
       {
-        name: 'no-theme',
+        name: 'default-starter',
         display: 'None',
         color: lightGray
       }

@@ -1,7 +1,7 @@
 {
-  "name": "default-starter",
+  "name": "bootstrap-starter",
   "version": "0.0.0",
-  "description": "Default starter theme",
+  "description": "Bootstrap starter theme",
   "main": "index.js",
   "scripts": {
     "predev": "npm run clean:build",
@@ -32,6 +32,7 @@
   "author": "Henk Verlinde",
   "license": "MIT",
   "devDependencies": {
+    "@hyas/bootstrap": "^0.1.1",
     "gethyas": "^2.0.2"
   }
 }

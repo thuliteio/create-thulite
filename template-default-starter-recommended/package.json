@@ -1,7 +1,7 @@
 {
   "name": "default-starter-recommended",
   "version": "0.0.0",
-  "description": "No Hyas theme with recommended plugins",
+  "description": "Default starter theme with recommended plugins",
   "main": "index.js",
   "scripts": {
     "predev": "npm run clean:build",

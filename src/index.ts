@@ -73,17 +73,12 @@ const FRAMEWORKS: Framework[] = [
     color: lightGray,
     variants: [
       {
-        name: 'bs-starter-full-control',
-        display: 'Full control',
-        color: lightGray
-      },
-      {
-        name: 'bs-starter-recommended',
+        name: 'bootstrap-starter-recommended',
         display: 'Recommended',
         color: lightGray
       },
       {
-        name: 'bs-starter',
+        name: 'bootstrap-starter',
         display: 'None',
         color: lightGray
       }

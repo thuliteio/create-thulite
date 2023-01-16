@@ -1,0 +1,43 @@
+[[mounts]]
+  source = "node_modules/@hyas/core/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/core/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/gethyas/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/bootstrap/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/@hyas/bootstrap/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/@hyas/seo/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/@hyas/images/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "plugins/bootstrap/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "plugins/bootstrap/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "assets"
+  target = "assets"
+
+[[mounts]]
+  source = "layouts"
+  target = "layouts"

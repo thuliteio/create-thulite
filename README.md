@@ -39,16 +39,17 @@ Use arguments for:
 
 Currently:
 
+- `bolt`
 - `doks`
 - `bootstrap-starter`
-- `no-theme`
+- `default-starter`
 
 ### Recommended plugins
 
 Currently:
 
-- [@hyas-seo](https://github.com/h-enk/hyas-seo)
-- [@hyas-images](https://github.com/h-enk/hyas-images)
+- [@hyas-seo](https://github.com/gethyas/seo)
+- [@hyas-images](https://github.com/gethyas/images)
 
 ### Example
 
@@ -70,6 +71,20 @@ With pnpm:
 
 ```bash
 pnpm create hyas my-doks-site --template doks-recommended
+```
+
+### Community templates
+
+Use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/themes/community/).
+
+```bash
+npx degit user/project my-project
+```
+
+If the project uses `main` as the default branch, suffix the project repo with `#main`
+
+```bash
+npx degit user/project#main my-project
 ```
 
 ## Credits

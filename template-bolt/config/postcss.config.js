@@ -26,7 +26,9 @@ module.exports = {
         'h2',
         'h3',
         'img-fluid',
+        'input',
         'type',
+        'checkbox',
         'dt',
         'dd',
         ...whitelister([

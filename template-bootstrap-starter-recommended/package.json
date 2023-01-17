@@ -34,7 +34,7 @@
   "devDependencies": {
     "@hyas/bootstrap": "^0.1.1",
     "@hyas/images": "^0.3.2",
-    "@hyas/seo": "^0.1.2",
-    "gethyas": "^2.0.2"
+    "@hyas/seo": "^0.1.3",
+    "gethyas": "^2.0.3"
   }
 }

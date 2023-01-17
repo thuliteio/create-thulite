@@ -33,6 +33,6 @@
   "license": "MIT",
   "devDependencies": {
     "@hyas/bootstrap": "^0.1.1",
-    "gethyas": "^2.0.2"
+    "gethyas": "^2.0.3"
   }
 }

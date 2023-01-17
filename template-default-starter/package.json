@@ -32,6 +32,6 @@
   "author": "Henk Verlinde",
   "license": "MIT",
   "devDependencies": {
-    "gethyas": "^2.0.2"
+    "gethyas": "^2.0.3"
   }
 }

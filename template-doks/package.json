@@ -1,21 +1,16 @@
 {
-  "name": "hyas-doks",
+  "name": "doks",
   "version": "0.0.0",
-  "license": "MIT",
-  "engines": {
-    "node": ">=16.17.0",
-    "npm": ">=8.15.0"
-  },
-  "browserslist": [
-    "defaults"
-  ],
+  "description": "Doks theme",
+  "main": "index.js",
   "scripts": {
     "predev": "npm run clean:build",
-    "dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost",
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --gc --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
+    "dev:gitpod": "exec-bin node_modules/.bin/hugo/hugo server --gc --disableFastRender --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
-    "check": "npm run check:scripts && npm run check:styles && npm run check:markdown",
+    "check": "npm run check:scripts && npm run check:markdown",
     "check:scripts": "eslint config",
-    "check:styles": "stylelint \"assets/scss/**/*.{css,sass,scss}\"",
+    "check:styles": "stylelint \"themes/doks/assets/scss/**/*.{css,sass,scss}\"",
     "check:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
     "fix:markdown": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
     "test": "npm run check",
@@ -30,8 +25,23 @@
     "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
     "postinstall": "shx rm -rf node_modules/.bin/hugo && shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyas/doks.git"
+  },
+  "keywords": [
+    "doks",
+    "hyas",
+    "hugo"
+  ],
+  "author": "Henk Verlinde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyas/doks/issues"
+  },
+  "homepage": "https://github.com/hyas/doks#readme",
   "devDependencies": {
-    "@hyas/themes-doks": "^0.1.2",
-    "gethyas": "^2.0.2"
+    "@hyas/doks-core": "^0.1.6",
+    "gethyas": "^2.0.4"
   }
 }

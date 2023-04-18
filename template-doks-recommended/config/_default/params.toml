@@ -1,9 +1,9 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Hyas"
+title = "Doks"
 titleSeparator = "-"
-titleAddition = "Build websites faster"
+titleAddition = "Modern Documentation Theme"
 description = "Hyas is a Hugo starter helping you build modern websites that are secure, fast, and SEO-ready — by default."
 
 ## Open Graph
@@ -37,8 +37,11 @@ schemaGitHub = "https://github.com/h-enk/hyas"
 # Feed
 copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
 
+# Footer
+footer = "Powered by <a class=\"text-muted\" href=\"https://www.netlify.com/\">Netlify</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+
 ## Documentation
-# docsVersion = "0.3"
+# docsVersion = "1.0"
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
@@ -83,25 +86,25 @@ defaultImage = "default-image.jpg" # put in `./assets/images/`
   errorHandler = "warning"
 
 [sections]
-  sectionNav = ["docs", "guides"]
+  sectionNav = ["docs", "guides", "books"]
 
 [options]
-  lazySizes = true
-  clipBoard = true
-  instantPage = true
-  flexSearch = true
-  searchSectionsShow = []
-  searchSectionsIndex = []
-  darkMode = true
-  bootStrapJs = true
-  breadCrumb = false
-  highLight = true
+  lazySizes = true # no longer an option (included by default)
+  clipBoard = true # no longer an option (included by default)
+  instantPage = false # no longer an option (replaced with quicklink, included by default)
+  flexSearch = true # new setup
+  searchSectionsShow = [] # new setup
+  searchSectionsIndex = [] # new setup
+  darkMode = true # new setup
+  bootStrapJs = true # new setup
+  breadCrumb = false # new setup
+  highLight = false # no longer an option (dropped, use Hugo's Chroma syntax highlighting)
   kaTex = false
   multilingualMode = false
   docsVersioning = false
-  fullWidth = false
-  navbarSticky = true
-  toTopButton = false
+  fullWidth = false # new setup
+  navbarSticky = true # same option
+  toTopButton = false # new setup (included by default)
   scrollSpy = false # experimental; needs Bootstrap >= 5.2.0-beta1
 
 [menu]

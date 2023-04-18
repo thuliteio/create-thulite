@@ -3,20 +3,20 @@
   functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "16.17.0"
-  NPM_VERSION = "8.15.0"
+  NODE_VERSION = "18.12.1"
+  NPM_VERSION = "8.19.2"
 
 [context.production]
-  command = "npm run build"
+  command = "pnpm build"
 
 [context.deploy-preview]
-  command = "npm run build -- -b $DEPLOY_PRIME_URL"
+  command = "pnpm build -- -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-  command = "npm run build -- -b $DEPLOY_PRIME_URL"
+  command = "pnpm build -- -b $DEPLOY_PRIME_URL"
 
 [context.next]
-  command = "npm run build"
+  command = "pnpm build"
 
 [context.next.environment]
   HUGO_ENV = "next"
@@ -25,7 +25,7 @@
   package = "netlify-plugin-submit-sitemap"
 
 	[plugins.inputs]
-    baseUrl = "https://hyas.netlify.app/"
+    baseUrl = "/"
     sitemapPath = "/sitemap.xml"
     ignorePeriod = 0
     providers = [
@@ -35,7 +35,7 @@
 
 [dev]
   framework = "#custom"
-  command = "npm run start"
+  command = "pnpm dev"
   targetPort = 1313
   port = 8888
   publish = "public"

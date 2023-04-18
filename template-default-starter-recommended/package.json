@@ -34,6 +34,6 @@
   "devDependencies": {
     "@hyas/images": "^0.3.2",
     "@hyas/seo": "^0.1.3",
-    "gethyas": "^2.0.3"
+    "gethyas": "^2.0.4"
   }
 }

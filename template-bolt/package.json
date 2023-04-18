@@ -41,6 +41,6 @@
   "homepage": "https://github.com/gethyas/examples-bolt#readme",
   "devDependencies": {
     "@hyas/bolt": "^0.1.3",
-    "gethyas": "^2.0.3"
+    "gethyas": "^2.0.4"
   }
 }

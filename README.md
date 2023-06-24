@@ -27,7 +27,7 @@ yarn create hyas
 With pnpm:
 
 ```bash
-pnpm create hyas
+pnpm create hyas@latest
 ```
 
 Then follow the prompts!

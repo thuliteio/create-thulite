@@ -44,7 +44,7 @@ npm create hyas@latest my-doks-project -- --template doks
 yarn create hyas my-doks-project --template doks
 
 # pnpm
-pnpm create hyas my-doks-project --template doks
+pnpm create hyas@latest my-doks-project --template doks
 ```
 
 You can use `.` for the project name to scaffold in the current directory.

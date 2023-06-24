@@ -62,14 +62,14 @@ Currently supported template presets include:
 
 ### Variants
 
-The `-recommended` variants include the recommended plugins, currently:
+The `-recommended` variants include the recommended integrations, currently:
 
 - [@hyas-seo](https://github.com/gethyas/seo)
 - [@hyas-images](https://github.com/gethyas/images)
 
 ### Community templates
 
-You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/).
+You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/):
 
 ```bash
 npx degit user/project my-project

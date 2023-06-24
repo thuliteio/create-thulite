@@ -1,14 +1,16 @@
 # create-hyas
 
-CLI for setting up a new Hyas project.
+Official CLI for scaffolding a new Hyas project.
+
+## Status
+
+[![npm (scoped)](https://img.shields.io/npm/v/create-hyas?style=flat-square)](https://www.npmjs.com/package/create-hyas)
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) — v16.17.0 or higher
+- [Node.js](https://nodejs.org/) — `v16.12.0` or higher
 
-## Usage
-
-Run the following command, and follow the prompts.
+## How to use
 
 With npm:
 
@@ -28,65 +30,57 @@ With pnpm:
 pnpm create hyas
 ```
 
+Then follow the prompts!
+
 ### Options
 
-Use arguments for:
+You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Doks project, run:
 
-- the directory to create the project in (use `.` to scaffold in the current directory)
-- the template to use (add `-recommended` to include recommended plugins)
+```bash
+# npm (extra double-dash is needed)
+npm create hyas@latest my-doks-project -- --template doks
+
+# Yarn
+yarn create hyas my-doks-project --template doks
+
+# pnpm
+pnpm create hyas my-doks-project --template doks
+```
+
+You can use `.` for the project name to scaffold in the current directory.
 
 ### Templates
 
-Currently:
+Currently supported template presets include:
 
-- `bolt`
 - `doks`
+- `bolt`
 - `bootstrap-starter`
+- `bootstrap-starter-recommended`
 - `default-starter`
+- `default-starter-recommended`
 
-### Recommended plugins
+### Variants
 
-Currently:
+The `-recommended` variants include the recommended plugins, currently:
 
 - [@hyas-seo](https://github.com/gethyas/seo)
 - [@hyas-images](https://github.com/gethyas/images)
 
-### Example
-
-Run the following command to scaffold a Doks project with recommended plugins.
-
-With npm:
-
-```bash
-npm create hyas@latest my-doks-site -- --template doks-recommended
-```
-
-With Yarn:
-
-```bash
-yarn create hyas my-doks-site --template doks-recommended
-```
-
-With pnpm:
-
-```bash
-pnpm create hyas my-doks-site --template doks-recommended
-```
-
 ### Community templates
 
-Use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/themes/community/).
+You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/).
 
 ```bash
 npx degit user/project my-project
-```
+cd my-project
 
-If the project uses `main` as the default branch, suffix the project repo with `#main`
-
-```bash
-npx degit user/project#main my-project
+npm install
+npm run dev
 ```
 
 ## Credits
 
-CLI setup is based on [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite).
+This npm package is based on:
+
+- [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)

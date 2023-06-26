@@ -34,35 +34,25 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
-    name: 'bolt',
-    display: 'Bolt',
+    name: 'doks',
+    display: 'Doks theme',
     color: lightGray,
     variants: [
       {
-        name: 'bolt-recommended',
-        display: 'Recommended',
-        color: lightGray
-      },
-      {
-        name: 'bolt',
-        display: 'None',
+        name: 'doks',
+        display: 'Default',
         color: lightGray
       }
     ]
   },
   {
-    name: 'doks',
-    display: 'Doks',
+    name: 'bolt',
+    display: 'Bolt theme',
     color: lightGray,
     variants: [
       {
-        name: 'doks-recommended',
-        display: 'Recommended',
-        color: lightGray
-      },
-      {
-        name: 'doks',
-        display: 'None',
+        name: 'bolt',
+        display: 'Default',
         color: lightGray
       }
     ]
@@ -73,30 +63,30 @@ const FRAMEWORKS: Framework[] = [
     color: lightGray,
     variants: [
       {
-        name: 'bootstrap-starter-recommended',
-        display: 'Recommended',
+        name: 'bootstrap-starter',
+        display: 'Default',
         color: lightGray
       },
       {
-        name: 'bootstrap-starter',
-        display: 'None',
+        name: 'bootstrap-starter-rec',
+        display: 'Recommended plugins',
         color: lightGray
       }
     ]
   },
   {
-    name: 'default-starter',
-    display: 'Default starter',
+    name: 'basic-starter',
+    display: 'Basic starter',
     color: lightGray,
     variants: [
       {
-        name: 'default-starter-recommended',
-        display: 'Recommended',
+        name: 'basic-starter',
+        display: 'Default',
         color: lightGray
       },
       {
-        name: 'default-starter',
-        display: 'None',
+        name: 'basic-starter-rec',
+        display: 'Recommended plugins',
         color: lightGray
       }
     ]
@@ -173,7 +163,7 @@ async function init() {
               ? reset(
                   `"${argTemplate}" isn't a valid template. Please choose from below: `
                 )
-              : reset('Select a theme:'),
+              : reset('Select a template:'),
           initial: 0,
           choices: FRAMEWORKS.map((framework) => {
             const frameworkColor = framework.color
@@ -187,7 +177,7 @@ async function init() {
           type: (framework: Framework) =>
             framework && framework.variants ? 'select' : null,
           name: 'variant',
-          message: reset('Select plugins:'),
+          message: reset('Select a variant:'),
           choices: (framework: Framework) =>
             framework.variants.map((variant) => {
               const variantColor = variant.color

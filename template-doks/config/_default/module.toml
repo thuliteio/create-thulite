@@ -15,6 +15,11 @@
   target = "layouts"
 
 [[mounts]]
+  source = "node_modules/@hyas/images/assets"
+  target = "assets"
+  excludeFiles = "/scss/**.scss"
+
+[[mounts]]
   source = "node_modules/@hyas/images/layouts"
   target = "layouts"
 
@@ -27,36 +32,44 @@
   target = "assets"
 
 [[mounts]]
-  source = "node_modules/@hyas/doks-core/content"
-  target = "content"
-
-[[mounts]]
   source = "node_modules/@hyas/doks-core/data"
   target = "data"
-
-[[mounts]]
-  source = "node_modules/@hyas/doks-core/i18n"
-  target = "i18n"
 
 [[mounts]]
   source = "node_modules/@hyas/doks-core/layouts"
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/@hyas/doks-core/static"
-  target = "static"
+  source = "themes/my-doks-theme/archetypes"
+  target = "archetypes"
+
+[[mounts]]
+  source = "themes/my-doks-theme/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "themes/my-doks-theme/data"
+  target = "data"
+
+[[mounts]]
+  source = "themes/my-doks-theme/layouts"
+  target = "layouts"
 
 [[mounts]]
   source = "node_modules/flexsearch"
   target = "assets/js/vendor/flexsearch"
 
 [[mounts]]
-  source = "node_modules/katex"
-  target = "assets/js/vendor/katex"
+  source = "node_modules/@tabler/icons/icons"
+  target = "assets/svgs/tabler-icons"
 
 [[mounts]]
-  source = "node_modules/mermaid"
-  target = "assets/js/vendor/mermaid"
+  source = "assets/svgs"
+  target = "assets/svgs"
+
+[[mounts]]
+  source = "node_modules/@hyas/inline-svg/layouts"
+  target = "layouts"
 
 [[mounts]]
   source = "archetypes"
@@ -67,21 +80,9 @@
   target = "assets"
 
 [[mounts]]
-  source = "content"
-  target = "content"
-
-[[mounts]]
   source = "data"
   target = "data"
 
 [[mounts]]
-  source = "i18n"
-  target = "i18n"
-
-[[mounts]]
   source = "layouts"
   target = "layouts"
-
-[[mounts]]
-  source = "static"
-  target = "static"

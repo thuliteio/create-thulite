@@ -7,10 +7,6 @@
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/gethyas/assets"
-  target = "assets"
-
-[[mounts]]
   source = "node_modules/@hyas/bootstrap/assets"
   target = "assets"
 
@@ -19,11 +15,11 @@
   target = "layouts"
 
 [[mounts]]
-  source = "plugins/bootstrap/assets"
+  source = "themes/my-bootstrap-theme/assets"
   target = "assets"
 
 [[mounts]]
-  source = "plugins/bootstrap/layouts"
+  source = "themes/my-bootstrap-theme/layouts"
   target = "layouts"
 
 [[mounts]]

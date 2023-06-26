@@ -11,27 +11,40 @@
   target = "assets"
 
 [[mounts]]
-  source = "node_modules/@hyas/bolt/archetypes"
-  target = "archetypes"
-
-[[mounts]]
-  source = "node_modules/@hyas/bolt/assets"
-  target = "assets"
-
-[[mounts]]
-  source = "node_modules/@hyas/bolt/layouts"
+  source = "node_modules/@hyas/seo/layouts"
   target = "layouts"
 
 [[mounts]]
-  source = "themes/bolt/archetypes"
+  source = "node_modules/@hyas/images/assets"
+  target = "assets"
+  excludeFiles = "/scss/**.scss"
+
+[[mounts]]
+  source = "node_modules/@hyas/images/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/@hyas/bolt-core/archetypes"
   target = "archetypes"
 
 [[mounts]]
-  source = "themes/bolt/assets"
+  source = "node_modules/@hyas/bolt-core/assets"
   target = "assets"
 
 [[mounts]]
-  source = "themes/bolt/layouts"
+  source = "node_modules/@hyas/bolt-core/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "themes/my-bolt-theme/archetypes"
+  target = "archetypes"
+
+[[mounts]]
+  source = "themes/my-bolt-theme/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "themes/my-bolt-theme/layouts"
   target = "layouts"
 
 [[mounts]]

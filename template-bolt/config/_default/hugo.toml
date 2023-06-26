@@ -1,0 +1,58 @@
+title = "Bolt"
+baseurl = "/"
+canonifyURLs = false
+disableAliases = true
+disableHugoGeneratorInject = true
+# disableKinds = ["taxonomy", "term"]
+enableEmoji = true
+enableGitInfo = false
+enableRobotsTXT = true
+languageCode = "en-US"
+paginate = 10
+rssLimit = 10
+summarylength = 20 # 70 (default)
+
+copyRight = "Copyright (c) 2023 Hyas"
+
+[social]
+  twitter = "gethyas"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[caches]
+  [caches.getjson]
+    dir = ":cacheDir/:project"
+    maxAge = "30m"
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  blog = "/:title/"
+
+[minify.tdewolff.html]
+  keepWhitespace = false
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = false
+    [[related.indices]]
+    name = "tags"
+    weight = 100
+    [[related.indices]]
+    name = "date"
+    weight = 10
+
+[imaging]
+  anchor = 'Smart'
+  bgColor = '#fff'
+  hint = 'photo'
+  quality = 90
+  resampleFilter = 'Lanczos'

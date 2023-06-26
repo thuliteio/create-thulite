@@ -12,19 +12,19 @@ Official CLI for scaffolding a new Hyas project.
 
 ## How to use
 
-With npm:
+### npm
 
 ```bash
 npm create hyas@latest
 ```
 
-With Yarn:
+### Yarn
 
 ```bash
 yarn create hyas
 ```
 
-With pnpm:
+### pnpm
 
 ```bash
 pnpm create hyas@latest
@@ -32,51 +32,66 @@ pnpm create hyas@latest
 
 Then follow the prompts!
 
-### Options
+## Options
 
-You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Doks project, run:
+You can also directly specify the project name and the template you want to use via additional command line options. Use `.` for the project name to scaffold in the current directory. For example, to scaffold a Doks project, run:
+
+### npm
 
 ```bash
-# npm (extra double-dash is needed)
 npm create hyas@latest my-doks-project -- --template doks
+```
 
-# Yarn
+### Yarn
+
+```bash
 yarn create hyas my-doks-project --template doks
+```
 
-# pnpm
+### pnpm
+
+```bash
 pnpm create hyas@latest my-doks-project --template doks
 ```
 
-You can use `.` for the project name to scaffold in the current directory.
-
-### Templates
+## Templates
 
 Currently supported template presets include:
 
 - `doks`
 - `bolt`
 - `bootstrap-starter`
-- `bootstrap-starter-recommended`
-- `default-starter`
-- `default-starter-recommended`
+- `bootstrap-starter-rec`
+- `basic-starter`
+- `basic-starter-rec`
 
 ### Variants
 
-The `-recommended` variants include the recommended integrations, currently:
+The `-rec` variants include the recommended integrations, currently:
 
 - [@hyas-seo](https://github.com/gethyas/seo)
 - [@hyas-images](https://github.com/gethyas/images)
 
-### Community templates
+## Community templates
 
-You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/):
+You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/). 
+
+### npm
 
 ```bash
-npx degit user/project my-project
-cd my-project
+npx degit user/repo my-project
+```
 
-npm install
-npm run dev
+### Yarn
+
+```bash
+yarn dlx degit user/repo my-project
+```
+
+### pnpm
+
+```bash
+pnpm dlx degit user/repo my-project
 ```
 
 ## Credits

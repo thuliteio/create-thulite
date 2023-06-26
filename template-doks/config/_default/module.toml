@@ -80,6 +80,10 @@
   target = "assets"
 
 [[mounts]]
+  source = "content"
+  target = "content"
+
+[[mounts]]
   source = "data"
   target = "data"
 

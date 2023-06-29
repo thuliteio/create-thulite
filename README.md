@@ -60,6 +60,8 @@ Currently supported template presets include:
 
 - `doks`
 - `bolt`
+- `tailwindcss-starter`
+- `tailwindcss-starter-rec`
 - `bootstrap-starter`
 - `bootstrap-starter-rec`
 - `basic-starter`

@@ -58,6 +58,23 @@ const FRAMEWORKS: Framework[] = [
     ]
   },
   {
+    name: 'tailwindcss-starter',
+    display: 'Tailwind CSS starter',
+    color: lightGray,
+    variants: [
+      {
+        name: 'tailwindcss-starter',
+        display: 'Default',
+        color: lightGray
+      },
+      {
+        name: 'tailwindcss-starter-rec',
+        display: 'Recommended plugins',
+        color: lightGray
+      }
+    ]
+  },
+  {
     name: 'bootstrap-starter',
     display: 'Bootstrap starter',
     color: lightGray,

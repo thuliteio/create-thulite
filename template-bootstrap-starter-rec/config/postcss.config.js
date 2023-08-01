@@ -7,8 +7,9 @@ module.exports = {
     autoprefixer(),
     purgecss({
       content: [
-        './node_modules/@hyas/core/layouts/**/*.html',
+        './node_modules/@hyas/*/layouts/**/*.html',
         './themes/my-bootstrap-theme/layouts/**/*.html',
+        './content/**/*.html',
         './content/**/*.md',
       ],
       safelist: [

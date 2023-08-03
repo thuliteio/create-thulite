@@ -7,12 +7,9 @@ module.exports = {
     autoprefixer(),
     purgecss({
       content: [
-        './node_modules/@hyas/core/layouts/**/*.html',
-        './node_modules/@hyas/seo/layouts/**/*.html',
-        './node_modules/@hyas/images/layouts/**/*.html',
-        './node_modules/@hyas/doks-core/layouts/**/*.html',
-        './node_modules/@hyas/doks-core/content/**/*.html',
-        './layouts/**/*.html',
+        './node_modules/@hyas/*/layouts/**/*.html',
+        './themes/my-doks-theme/layouts/**/*.html',
+        './content/**/*.html',
         './content/**/*.md',
       ],
       safelist: [

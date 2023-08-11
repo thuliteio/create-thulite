@@ -87,6 +87,14 @@
   source = "data"
   target = "data"
 
+[[module]]
+  source = "i18n"
+  target = "i18n"
+
 [[mounts]]
   source = "layouts"
   target = "layouts"
+
+[[module]]
+  source = "static"
+  target = "static"

@@ -13,7 +13,8 @@ navBarButtonText = "Get started"
 
 # FlexSearch
 flexSearch = true # true (default) or false
-indexPages = [] # [] (all regular pages, default) or list of sections (e.g. ["blog", "guides"])
+searchExclKinds = [] # list of page kinds to exclude from search indexing (e.g. ["home", "taxonomy", "term"] )
+searchExclTypes = [] # list of content types to exclude from search indexing (e.g. ["blog", "docs", "legal", "contributors", "categories"])
 showSearch = [] # [] (all pages, default) or homepage (optionally) and list of sections (e.g. ["homepage", "blog", "guides"])
 
 ## Search results

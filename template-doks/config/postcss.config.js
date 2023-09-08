@@ -8,7 +8,8 @@ module.exports = {
     purgecss({
       content: [
         './node_modules/@hyas/*/layouts/**/*.html',
-        './themes/my-doks-theme/layouts/**/*.html',
+        './themes/*/layouts/**/*.html',
+        './layouts/**/*.html',
         './content/**/*.html',
         './content/**/*.md',
       ],

@@ -1,3 +1,9 @@
+# Favicon (@hyas/doks-core)
+[favicon]
+  # title = "Custom favicon meta title"
+  color_tile = "#da532c"
+  color_theme = "#ffffff"
+
 # Images (@hyas/images)
 [image]
   ## General

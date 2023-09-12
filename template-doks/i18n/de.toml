@@ -7,6 +7,12 @@ other = "Seite nicht gefunden"
 [browse]
 other = "Browse"
 
+[chapter_next]
+other = "Danach"
+
+[chapter_previous]
+other = "Davor"
+
 [edit_page]
 other = "Editiere diese Seite auf"
 

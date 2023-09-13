@@ -25,7 +25,6 @@ searchLimit = 5 # 0 (no limit, default) or natural number
 # Global alert
 alert = false # false (default) or true
 alertDismissable = true # true (default) or false
-alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">Doks version 1.0 just shipped!</a>'
 
 # Bootstrap
 bootstrapJavascript = false # false (default) or true
@@ -54,9 +53,6 @@ sectionFooter = false # false (default) or true
 
 # Blog
 relatedPosts = false # false (default) or true
-
-# Footer
-footer = "Brought to you by <a class=\"text-muted\" href=\"https://gethyas.com/\">Hyas</a>"
 
 # KaTex
 katex = false

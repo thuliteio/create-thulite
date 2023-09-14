@@ -25,7 +25,6 @@ searchLimit = 5 # 0 (no limit, default) or natural number
 # Global alert
 alert = false # false (default) or true
 alertDismissable = true # true (default) or false
-alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/doks-1/">Doks version 1.0 just shipped!</a>'
 
 # Bootstrap
 bootstrapJavascript = false # false (default) or true
@@ -46,7 +45,7 @@ docsVersioning = false # false (default) or true
 docsVersion = "1.0"
 
 # UX
-headerBar = true # true (default)  or false
+headerBar = false # true (default)  or false
 backgroundDots = true # true (default)  or false
 
 # Homepage
@@ -54,9 +53,6 @@ sectionFooter = false # false (default) or true
 
 # Blog
 relatedPosts = false # false (default) or true
-
-# Footer
-footer = "Powered by <a class=\"text-muted\" href=\"https://www.netlify.com/\">Netlify</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
 
 # KaTex
 katex = false

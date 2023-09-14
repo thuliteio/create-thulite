@@ -13,6 +13,8 @@
     {{ partial "footer/footer.html" . }}
     {{ if templates.Exists "partials/footer/script-footer.html" -}}
       {{ partial "footer/script-footer.html" . }}
+    {{- else if templates.Exists "partials/footer/script-footer-core.html" -}}
+      {{ partial "footer/script-footer-core.html" . }}
     {{- end }}
   </body>
 </html>

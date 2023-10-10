@@ -1,0 +1,142 @@
+# Doks (@hyas/doks-core)
+[doks]
+  # Color mode
+  colorMode = "auto" # auto (default), light or dark
+  colorModeToggler = true # true (default) or false (this setting is only relevant when colorMode = auto)
+
+  # Navbar
+  navbarSticky = true # true (default) or false
+  containerBreakpoint = "lg" # "", "sm", "md", "lg" (default), "xl", "xxl", or "fluid"
+
+  ## Button
+  navBarButton = false # false (default) or true
+  navBarButtonUrl = "/docs/prologue/introduction/"
+  navBarButtonText = "Get started"
+
+  # FlexSearch
+  flexSearch = true # true (default) or false
+  searchExclKinds = [] # list of page kinds to exclude from search indexing (e.g. ["home", "taxonomy", "term"] )
+  searchExclTypes = [] # list of content types to exclude from search indexing (e.g. ["blog", "docs", "legal", "contributors", "categories"])
+  showSearch = [] # [] (all pages, default) or homepage (optionally) and list of sections (e.g. ["homepage", "blog", "guides"])
+
+  ## Search results
+  showDate = false # false (default) or true
+  showSummary = true # true (default) or false
+  searchLimit = 99 # 0 (no limit, default) or natural number
+
+  # Global alert
+  alert = false # false (default) or true
+  alertDismissable = true # true (default) or false
+
+  # Bootstrap
+  bootstrapJavascript = false # false (default) or true
+
+  # Nav
+  sectionNav = ["docs"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
+  toTopButton = false # false (default) or true
+  breadcrumbTrail = false # false (default) or true
+  headlineHash = true # true (default) or false
+  scrollSpy = true # true (default) or false
+
+  # Multilingual
+  multilingualMode = false # false (default) or true
+  showMissingLanguages = true # whether or not to show untranslated languages in the language menu; true (default) or false
+
+  # Versioning
+  docsVersioning = false # false (default) or true
+  docsVersion = "1.0"
+
+  # UX
+  headerBar = false # true (default)  or false
+  backgroundDots = true # true (default)  or false
+
+  # Homepage
+  sectionFooter = false # false (default) or true
+
+  # Blog
+  relatedPosts = false # false (default) or true
+
+  # KaTex
+  katex = false
+
+  # Repository
+  editPage = false # false (default) or true
+  lastMod = false # false (default) or true
+  repoHost = "GitHub" # GitHub (default), Gitea, GitLab, Bitbucket, or BitbucketServer
+  docsRepo = "https://github.com/h-enk/doks"
+  docsRepoBranch = "main" # main (default), master, or <branch name>
+  docsRepoSubPath = "" # "" (none, default) or <sub path>
+
+  # SCSS colors
+  # backGround = "yellowgreen"
+  ## Dark theme
+  # textDark = "#dee2e6" # "#dee2e6" (default), "#dee2e6" (orignal), or custom color
+  # accentDark = "#5d2f86" # "#5d2f86" (default), "#5d2f86" (original), or custom color
+  ## Light theme
+  # textLight = "#1d2d35" # "#1d2d35" (default), "#1d2d35" (orignal), or custom color
+  # accentLight = "#8ed6fb" # "#8ed6fb" (default), "#8ed6fb" (orignal), or custom color
+
+  [doks.menu]
+    [doks.menu.section]
+      auto = true # true (default) or false
+      collapsibleSidebar = true # true (default) or false
+
+# Images (@hyas/images)
+[image]
+  ## General
+  type = "page" # "page" (default) or "global"
+  widths = [ 480, 640, 768, 1024, 1366 ] # [480, 640, 768, 1024, 1366] (default)
+  densities = [ 1, 2 ] # [1,2] (default)
+  formats = [ "original", "webp" ] # ["original", "webp"] (default)
+  # provider = "netlify" # unset (default) or "netlify"
+  loading = "lazysizes" # "auto", "lazy", or "lazysizes" (default)
+  class = "img-fluid blur-up" # "img-fluid blur-up" (default)
+  output = "picture" # "picture" (default), "figure", or "img"
+  noscript = false # false (default) or true
+  ## Placeholder
+  placeholder = "lqip" # unset, "lqip" (default), "dominant", or ["black", ["gray-100..gray-900"], "white"]
+  lqip_div_factor = 5 # 5 (default)
+  lqip_blur_amount = 5 # 5 (default)
+  gif_div_factor = 10 # 10 (default)
+  ## Figure
+  target = "_blank" # "_blank" (default)
+  rel = "noopener, noreferrer" # "noopener, noreferrer" (default)
+  figure_class = "figure" # "figure" (default)
+  figure_image_class = "figure-img img-fluid blur-up" # "figure-img img-fluid blur-up" (default)
+  figcaption_class = "figure-caption" # "figure-caption" (default)
+  figcaption_title_h = 4 # 4 (default)
+  attr_link_target = "_blank" # "_blank" (default)
+  attr_link_rel = "noopener, noreferrer" # "noopener, noreferrer" (default)
+  ## Render hook
+  render_hook = true # false or true (default)
+  render_hook_wrapper_class = "img-wrapper" # "img-wrapper" (default)
+  ## Shortcode
+  shortcode_wrapper_class = "img-wrapper" # "img-wrapper" (default)
+  ## Debugging
+  suppress_width_warning = false # false (default) or true
+  debug = false # false (default) or true
+
+# Inline SVG (@hyas/inline-svg)
+[inline_svg]
+  icon_set_dir = "tabler-icons" # "tabler-icons" (default)
+
+# SEO (@hyas/seo)
+[seo]
+  description = ""
+  og_article_types = [ "post", "posts", "blog", "news", "article", "articles", "event", "events", "course", "courses"]
+  jsonld_article_types = [ "article", "articles" ]
+  jsonld_news_article_types = [ "news", "updates" ]
+  jsonld_blog_posting_types = [ "post", "posts", "blog" ]
+  image = "/images/hyas-schema-image.png"
+  private = false
+  [seo.generate]
+    title = true
+    meta = true
+    twitter = true
+    og = true
+    [seo.generate.jsonld]
+      article = true
+      breadcrumbs = true
+  [seo.title_tag]
+    separator = "|"
+    home_text = ""

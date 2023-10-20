@@ -19,10 +19,6 @@
   excludeFiles = "/scss/**.scss"
 
 [[mounts]]
-  source = "themes/my-tailwindcss-theme/assets"
-  target = "assets"
-
-[[mounts]]
   source = "hugo_stats.json"
   target = "assets/watching/hugo_stats.json"
 
@@ -60,10 +56,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/images/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-tailwindcss-theme/layouts"
   target = "layouts"
 
 [[mounts]]

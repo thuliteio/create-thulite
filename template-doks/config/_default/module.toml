@@ -40,10 +40,6 @@
   target = "assets/svgs/tabler-icons"
 
 [[mounts]]
-  source = "themes/my-doks-theme/assets"
-  target = "assets"
-
-[[mounts]]
   source = "assets"
   target = "assets"
 
@@ -93,10 +89,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/inline-svg/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-doks-theme/layouts"
   target = "layouts"
 
 [[mounts]]

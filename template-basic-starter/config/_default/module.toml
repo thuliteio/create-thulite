@@ -10,10 +10,6 @@
   target = "assets"
 
 [[mounts]]
-  source = "themes/my-basic-theme/assets"
-  target = "assets"
-
-[[mounts]]
   source = "assets"
   target = "assets"
 
@@ -35,10 +31,6 @@
 ## layouts
 [[mounts]]
   source = "node_modules/@hyas/core/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-basic-theme/layouts"
   target = "layouts"
 
 [[mounts]]

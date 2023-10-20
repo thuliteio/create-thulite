@@ -13,8 +13,8 @@ module.exports = {
             const els = JSON.parse(content).htmlElements;
             return els.tags.concat(els.classes, els.ids);
           },
-          extensions: ['json']
-        }
+          extensions: ['json'],
+        },
       ],
       dynamicAttributes: [
         'aria-expanded',
@@ -29,7 +29,7 @@ module.exports = {
         'data-toggle-tab',       // tabs.js
         'id',
         'size',
-        'type'
+        'type',
       ],
       safelist: [
         'active',
@@ -40,12 +40,15 @@ module.exports = {
         'modal-backdrop',        // search-modal.js
         'selected',              // search-modal.js
         'show',
+        'img-fluid',
+        'blur-up',
+        'lazyloaded',
         ...whitelister([
           './assets/scss/**/*.css',
           './assets/scss/**/*.scss',
-          './node_modules/katex/dist/katex.css'
-        ])
-      ]
-    })
-  ]
+          './node_modules/katex/dist/katex.css',
+        ]),
+      ],
+    }),
+  ],
 }

@@ -15,10 +15,6 @@
   excludeFiles = "/scss/**.scss"
 
 [[mounts]]
-  source = "themes/my-basic-theme/assets"
-  target = "assets"
-
-[[mounts]]
   source = "assets"
   target = "assets"
 
@@ -48,10 +44,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/images/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-basic-theme/layouts"
   target = "layouts"
 
 [[mounts]]

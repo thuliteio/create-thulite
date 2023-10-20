@@ -1,3 +1,8 @@
+# Hugo
+title = "My Docs"
+description = "Congrats on setting up a new Doks project!"
+images = ["cover.png"]
+
 # Doks (@hyas/doks-core)
 [doks]
   # Color mode
@@ -48,14 +53,16 @@
   docsVersion = "1.0"
 
   # UX
-  headerBar = false # true (default)  or false
-  backgroundDots = true # true (default)  or false
+  headerBar = false # true (default) or false
+  backgroundDots = true # true (default) or false
 
   # Homepage
   sectionFooter = false # false (default) or true
 
   # Blog
   relatedPosts = false # false (default) or true
+  imageList = true # true (default) or false
+  imageSingle = true # true (default) or false
 
   # KaTex
   katex = false
@@ -82,62 +89,47 @@
       auto = true # true (default) or false
       collapsibleSidebar = true # true (default) or false
 
+# Debug
+[render_hooks.image]
+  errorLevel = 'ignore' # ignore (default), warning, or error (fails the build)
+
+[render_hooks.link]
+  errorLevel = 'ignore' # ignore (default), warning, or error (fails the build)
+  highlightBroken = false # true or false (default)
+
 # Images (@hyas/images)
-[image]
-  ## General
-  type = "page" # "page" (default) or "global"
-  widths = [ 480, 640, 768, 1024, 1366 ] # [480, 640, 768, 1024, 1366] (default)
-  densities = [ 1, 2 ] # [1,2] (default)
-  formats = [ "original", "webp" ] # ["original", "webp"] (default)
-  # provider = "netlify" # unset (default) or "netlify"
-  loading = "lazysizes" # "auto", "lazy", or "lazysizes" (default)
-  class = "img-fluid blur-up" # "img-fluid blur-up" (default)
-  output = "picture" # "picture" (default), "figure", or "img"
-  noscript = false # false (default) or true
-  ## Placeholder
-  placeholder = "lqip" # unset, "lqip" (default), "dominant", or ["black", ["gray-100..gray-900"], "white"]
-  lqip_div_factor = 5 # 5 (default)
-  lqip_blur_amount = 5 # 5 (default)
-  gif_div_factor = 10 # 10 (default)
-  ## Figure
-  target = "_blank" # "_blank" (default)
-  rel = "noopener, noreferrer" # "noopener, noreferrer" (default)
-  figure_class = "figure" # "figure" (default)
-  figure_image_class = "figure-img img-fluid blur-up" # "figure-img img-fluid blur-up" (default)
-  figcaption_class = "figure-caption" # "figure-caption" (default)
-  figcaption_title_h = 4 # 4 (default)
-  attr_link_target = "_blank" # "_blank" (default)
-  attr_link_rel = "noopener, noreferrer" # "noopener, noreferrer" (default)
-  ## Render hook
-  render_hook = true # false or true (default)
-  render_hook_wrapper_class = "img-wrapper" # "img-wrapper" (default)
-  ## Shortcode
-  shortcode_wrapper_class = "img-wrapper" # "img-wrapper" (default)
-  ## Debugging
-  suppress_width_warning = false # false (default) or true
-  debug = false # false (default) or true
+[hyas_images]
+  [hyas_images.landscape]
+    normalize = "1360x765" # "1600x900" (default)
+    lqip = "16x9" # "16x9" (default)
+    widths = [480, 640, 800, 1024]
+  [hyas_images.portrait]
+    normalize = "765x1360" # "900x1600" (default)
+    lqip = "9x16" # "9x16" (default)
+    widths = [480, 640, 800, 1024]
 
 # Inline SVG (@hyas/inline-svg)
 [inline_svg]
-  icon_set_dir = "tabler-icons" # "tabler-icons" (default)
+  iconSetDir = "tabler-icons" # "tabler-icons" (default)
 
 # SEO (@hyas/seo)
 [seo]
-  description = ""
-  og_article_types = [ "post", "posts", "blog", "news", "article", "articles", "event", "events", "course", "courses"]
-  jsonld_article_types = [ "article", "articles" ]
-  jsonld_news_article_types = [ "news", "updates" ]
-  jsonld_blog_posting_types = [ "post", "posts", "blog" ]
-  image = "/images/hyas-schema-image.png"
-  private = false
-  [seo.generate]
-    title = true
-    meta = true
-    twitter = true
-    og = true
-    [seo.generate.jsonld]
-      article = true
-      breadcrumbs = true
-  [seo.title_tag]
-    separator = "|"
-    home_text = ""
+  [seo.title]
+    separator = " | "
+    suffix = ""
+  [seo.favicons]
+    sizes = []
+    icon = "favicon.png" # favicon.png (default)
+    svgIcon = "favicon.svg" # favicon.svg (default)
+    maskIcon = "mask-icon.svg" # mask-icon.svg (default)
+    maskIconColor = "white" # white (default)
+  [seo.schemas]
+    type = "Organization" # Organization (default) or Person
+    logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
+    name = "Hyas" # Name of Organization or Person
+    sameAs = [] # E.g. ["https://github.com/gethyas/hyas", "https://fosstodon.org/@hyas"]
+    images = ["cover.png"] # ["cover.png"] (default)
+    article = [] # Article sections
+    newsArticle = [] # NewsArticle sections
+    blogPosting = ["blog"] # BlogPosting sections
+    product = [] # Product sections

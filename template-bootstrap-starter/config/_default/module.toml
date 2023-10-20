@@ -14,10 +14,6 @@
   target = "assets"
 
 [[mounts]]
-  source = "themes/my-bootstrap-theme/assets"
-  target = "assets"
-
-[[mounts]]
   source = "assets"
   target = "assets"
 
@@ -43,10 +39,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/bootstrap/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-bootstrap-theme/layouts"
   target = "layouts"
 
 [[mounts]]

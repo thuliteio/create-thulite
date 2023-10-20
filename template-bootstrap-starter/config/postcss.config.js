@@ -6,26 +6,42 @@ module.exports = {
   plugins: [
     autoprefixer(),
     purgecss({
-      content: [
-        './node_modules/@hyas/*/layouts/**/*.html',
-        './themes/my-bootstrap-theme/layouts/**/*.html',
-        './content/**/*.html',
-        './content/**/*.md',
+      content: [ './hugo_stats.json' ],
+      extractors: [
+        {
+          extractor: (content) => {
+            const els = JSON.parse(content).htmlElements;
+            return els.tags.concat(els.classes, els.ids);
+          },
+          extensions: ['json'],
+        },
+      ],
+      dynamicAttributes: [
+        'aria-expanded',
+        'data-bs-popper',
+        'data-bs-target',
+        'data-bs-theme',
+        'data-dark-mode',
+        'data-global-alert',
+        'data-pane',             // tabs.js
+        'data-popper-placement',
+        'data-sizes',
+        'data-toggle-tab',       // tabs.js
+        'id',
+        'size',
+        'type',
       ],
       safelist: [
+        'active',
+        'disabled',
+        'hidden',
+        'show',
+        'img-fluid',
+        'blur-up',
         'lazyloaded',
-        'table',
-        'thead',
-        'tbody',
-        'tr',
-        'th',
-        'td',
-        'h1',
-        'h2',
-        'h3',
-        'alert-link',
         ...whitelister([
-          './node_modules/@hyas/core/assets/scss/app.scss',
+          './assets/scss/**/*.css',
+          './assets/scss/**/*.scss',
         ]),
       ],
     }),

@@ -5,10 +5,6 @@
   target = "archetypes"
 
 [[mounts]]
-  source = "themes/my-bolt-theme/archetypes"
-  target = "archetypes"
-
-[[mounts]]
   source = "archetypes"
   target = "archetypes"
 
@@ -28,10 +24,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/bolt-core/assets"
-  target = "assets"
-
-[[mounts]]
-  source = "themes/my-bolt-theme/assets"
   target = "assets"
 
 [[mounts]]
@@ -68,10 +60,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/bolt-core/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "themes/my-bolt-theme/layouts"
   target = "layouts"
 
 [[mounts]]

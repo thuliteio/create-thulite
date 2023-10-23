@@ -27,7 +27,7 @@
   "devDependencies": {
     "@hyas/images": "^2.0.3",
     "@hyas/seo": "^2.1.0",
-    "@hyas/tailwindcss": "^1.0.2",
+    "@hyas/tailwindcss": "^1.0.3",
     "gethyas": "^2.2.2"
   },
   "engines": {

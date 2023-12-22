@@ -30,6 +30,9 @@
     "@hyas/tailwindcss": "^1.0.3",
     "gethyas": "^2.2.2"
   },
+  "overrides": {
+    "semver": "^7.5.4"
+  },
   "engines": {
     "node": ">=16.12.0"
   }

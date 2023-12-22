@@ -28,6 +28,9 @@
     "@hyas/bootstrap": "^1.0.4",
     "gethyas": "^2.2.2"
   },
+  "overrides": {
+    "semver": "^7.5.4"
+  },
   "engines": {
     "node": ">=16.12.0",
     "pnpm": ">=8.6.2"

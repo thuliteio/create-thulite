@@ -27,6 +27,9 @@
   "dependencies": {
     "@hyas/doks-core": "^1.1.1"
   },
+  "overrides": {
+    "semver": "^7.5.4"
+  },
   "engines": {
     "node": ">=16.12.0",
     "pnpm": ">=8.6.2"

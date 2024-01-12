@@ -15,7 +15,7 @@ How to start a new Hyas project — one pager.
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) — `v16.12.0 `or higher
+- [Node.js](https://nodejs.org/) — `v16.12.0` or higher
 
 ## Get started
 

@@ -10,7 +10,7 @@
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "lint": "npm run lint:scripts && npm run lint:styles && npm run lint:markdown",
     "lint:scripts": "eslint --cache config",
-    "lint:styles": "stylelint --cache \"assets/scss/**/*.{css,sass,scss}\"",
+    "lint:styles": "stylelint --cache \"assets/css/**/*.{css,sass,scss}\"",
     "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "exec-bin node_modules/.bin/hugo/hugo --cleanDestinationDir --minify",

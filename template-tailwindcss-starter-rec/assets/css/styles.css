@@ -36,25 +36,13 @@
   body {
     margin: 7rem 1.5rem;
   }
+
   h1 {
     @apply text-5xl;
   }
+
   h2 {
     @apply text-xl;
-  }
-  img[data-sizes="auto"] {
-    display: block;
-    width: 100%;
-  }
-  .figure {
-    display: block;
-  }
-  .blur-up {
-    filter: blur(5px);
-    transition: filter 400ms;
-  }
-  .blur-up.lazyloaded {
-    filter: unset;
   }
 }
 
@@ -68,6 +56,7 @@
   .filter-none {
     filter: none;
   }
+  
   .filter-grayscale {
     filter: grayscale(100%);
   }

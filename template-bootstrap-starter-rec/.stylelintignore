@@ -1,2 +1,3 @@
-assets/scss/vendor
+assets/scss/common/_variables-overrides.scss
+assets/scss/common/_variables-custom.scss
 node_modules

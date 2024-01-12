@@ -3,6 +3,9 @@ title = "My Hyas site"
 description = "Congrats on setting up a new Hyas project!"
 images = ["cover.png"]
 
+[social]
+  twitter = "gethyas"
+
 # Debug
 [render_hooks.image]
   errorLevel = 'ignore' # ignore (default), warning, or error (fails the build)

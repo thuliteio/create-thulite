@@ -16,7 +16,6 @@
 [[mounts]]
   source = "node_modules/@hyas/images/assets"
   target = "assets"
-  excludeFiles = "/scss/**.scss"
 
 [[mounts]]
   source = "hugo_stats.json"

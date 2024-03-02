@@ -35,7 +35,7 @@
     "shx": "^0.3.4"
   },
   "otherDependencies": {
-    "hugo": "0.123.6"
+    "hugo": "0.123.7"
   },
   "overrides": {
     "semver": "^7.5.4"

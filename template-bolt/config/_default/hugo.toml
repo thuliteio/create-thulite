@@ -1,5 +1,5 @@
 title = "Bolt"
-baseurl = "/"
+baseurl = "http://localhost/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
@@ -44,11 +44,11 @@ copyRight = "Copyright (c) 2020-2024 Hyas"
   includeNewer = true
   toLower = false
     [[related.indices]]
-    name = "tags"
-    weight = 100
+      name = "tags"
+      weight = 100
     [[related.indices]]
-    name = "date"
-    weight = 10
+      name = "date"
+      weight = 10
 
 [imaging]
   anchor = "Center"

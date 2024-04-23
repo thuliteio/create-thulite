@@ -12,21 +12,19 @@
 [[mounts]]
   source = "node_modules/@hyas/core/assets"
   target = "assets"
-  # excludeFiles = ["scss/app.scss", "js/app.js"]
 
 [[mounts]]
   source = "node_modules/gethyas/assets"
   target = "assets"
-  # excludeFiles = ["scss/app.scss"]
 
 [[mounts]]
   source = "node_modules/@hyas/images/assets"
   target = "assets"
+  excludeFiles = "/scss/**.scss"
 
 [[mounts]]
   source = "node_modules/@hyas/bolt-core/assets"
   target = "assets"
-  # excludeFiles = ["cover.png", "favicon.ico", "favicon.png", "favicon.svg", "mask-icon.svg"]
 
 [[mounts]]
   source = "assets"

@@ -1,5 +1,11 @@
 # create-hyas
 
+## 1.6.0
+
+### Minor Changes
+
+- [#37](https://github.com/gethyas/create-hyas/pull/37) [`4efc389`](https://github.com/gethyas/create-hyas/commit/4efc389e4f40fa460cb72e8654fb958fb83f49ef) Thanks [@h-enk](https://github.com/h-enk)! - Add scaffold Vermeer theme
+
 ## 1.5.0
 
 ### Minor Changes

@@ -46,6 +46,18 @@ const FRAMEWORKS: Framework[] = [
     ]
   },
   {
+    name: 'vermeer',
+    display: 'Vermeer theme',
+    color: lightGray,
+    variants: [
+      {
+        name: 'vermeer',
+        display: 'Default',
+        color: lightGray
+      }
+    ]
+  },
+  {
     name: 'bolt',
     display: 'Bolt theme',
     color: lightGray,

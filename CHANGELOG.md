@@ -1,5 +1,11 @@
 # create-hyas
 
+## 1.6.1
+
+### Patch Changes
+
+- [#38](https://github.com/gethyas/create-hyas/pull/38) [`ca201fb`](https://github.com/gethyas/create-hyas/commit/ca201fbcd506383a9b2b50ec3878892c4b8bd778) Thanks [@h-enk](https://github.com/h-enk)! - Fix for pnpm
+
 ## 1.6.0
 
 ### Minor Changes

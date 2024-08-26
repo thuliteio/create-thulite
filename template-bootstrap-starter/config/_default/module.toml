@@ -6,11 +6,11 @@
 
 ## assets
 [[mounts]]
-  source = "node_modules/@hyas/core/assets"
+  source = "node_modules/@thulite/core/assets"
   target = "assets"
 
 [[mounts]]
-  source = "node_modules/@hyas/bootstrap/assets"
+  source = "node_modules/@thulite/bootstrap/assets"
   target = "assets"
 
 [[mounts]]
@@ -34,11 +34,11 @@
 
 ## layouts
 [[mounts]]
-  source = "node_modules/@hyas/core/layouts"
+  source = "node_modules/@thulite/core/layouts"
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/@hyas/bootstrap/layouts"
+  source = "node_modules/@thulite/bootstrap/layouts"
   target = "layouts"
 
 [[mounts]]

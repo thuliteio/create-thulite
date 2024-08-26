@@ -34,24 +34,24 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
-    name: 'doks',
-    display: 'Doks theme',
-    color: lightGray,
-    variants: [
-      {
-        name: 'doks',
-        display: 'Default',
-        color: lightGray
-      }
-    ]
-  },
-  {
     name: 'vermeer',
     display: 'Vermeer theme',
     color: lightGray,
     variants: [
       {
         name: 'vermeer',
+        display: 'Default',
+        color: lightGray
+      }
+    ]
+  },
+  {
+    name: 'doks',
+    display: 'Doks theme',
+    color: lightGray,
+    variants: [
+      {
+        name: 'doks',
         display: 'Default',
         color: lightGray
       }
@@ -130,7 +130,7 @@ const renameFiles: Record<string, string | undefined> = {
   _gitignore: '.gitignore'
 }
 
-const defaultTargetDir = 'hyas-project'
+const defaultTargetDir = 'thulite-project'
 
 async function init() {
   const argTargetDir = formatTargetDir(argv._[0])

@@ -1,8 +1,8 @@
 {
   "name": "bootstrap-starter",
   "version": "0.0.0",
-  "description": "Hyas",
-  "author": "Hyas",
+  "description": "Thulite",
+  "author": "Thulite",
   "license": "MIT",
   "scripts": {
     "create": "hugo new",
@@ -12,12 +12,12 @@
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
-    "@hyas/bootstrap": "^1.1.1",
-    "gethyas": "^2.4.2"
+    "@thulite/bootstrap": "^1.2.0",
+    "thulite": "^2.5.0"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "vite": "^5.2.10"
+    "prettier": "^3.3.3",
+    "vite": "^5.4.2"
   },
   "engines": {
     "node": ">=20.11.0"

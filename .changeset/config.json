@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "gethyas/create-hyas" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "thuliteio/create-thulite" }],
   "commit": false,
   "fixed": [],
   "linked": [],

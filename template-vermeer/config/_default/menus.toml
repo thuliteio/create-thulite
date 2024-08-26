@@ -1,16 +1,16 @@
 [[main]]
   name = "More details"
-  url = "https://vermeer.gethyas.com/"
+  url = "https://vermeer.thulite.io/"
   weight = 10
 
 [[main]]
   name = "Download Vermeer"
-  url = "https://vermeer.gethyas.com/"
+  url = "https://thulite.io/vermeer/"
   weight = 20
 
 [[main]]
   name = "My website"
-  url = "https://gethyas.com/"
+  url = "https://thulite.io/"
   weight = 30
 
 [[social]]

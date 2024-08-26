@@ -34,24 +34,24 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
-    name: 'doks',
-    display: 'Doks theme',
-    color: lightGray,
-    variants: [
-      {
-        name: 'doks',
-        display: 'Default',
-        color: lightGray
-      }
-    ]
-  },
-  {
     name: 'vermeer',
     display: 'Vermeer theme',
     color: lightGray,
     variants: [
       {
         name: 'vermeer',
+        display: 'Default',
+        color: lightGray
+      }
+    ]
+  },
+  {
+    name: 'doks',
+    display: 'Doks theme',
+    color: lightGray,
+    variants: [
+      {
+        name: 'doks',
         display: 'Default',
         color: lightGray
       }

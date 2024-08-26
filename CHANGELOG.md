@@ -1,5 +1,11 @@
 # create-thulite
 
+## 1.7.0
+
+### Minor Changes
+
+- [#40](https://github.com/thuliteio/create-thulite/pull/40) [`abba4d2`](https://github.com/thuliteio/create-thulite/commit/abba4d2dab418a3cf9611815f187faec80a739ea) Thanks [@h-enk](https://github.com/h-enk)! - Update for migration from Hyas to Thulite
+
 ## 1.6.1
 
 ### Patch Changes

@@ -1,3 +1,3 @@
 # Vermeer
 
-Hyas scaffold for Vermeer theme, including Vermeer theme.
+Thulite scaffold for Vermeer theme, including Vermeer theme.

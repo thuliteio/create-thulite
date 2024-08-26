@@ -1,6 +1,6 @@
 ---
 title: "Quick Start"
-description: "A quick start to using Hyas."
+description: "A quick start to using Thulite."
 date: 2020-04-17T12:17:54+00:00
 lastmod: 2020-04-17T12:17:54+00:00
 draft: false
@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-How to start a new Hyas project — one pager.
+How to start a new Thulite project — one pager.
 
 ## Requirements
 
@@ -22,15 +22,15 @@ How to start a new Hyas project — one pager.
 Create a new project:
 
 ```bash
-npm create hyas@latest
+npm create thulite@latest
 ```
 
 ## Documentation
 
-- [Hyas](https://gethyas.com/)
+- [Thulite](https://docs.thulite.io/getting-started/)
 - [Hugo](https://gohugo.io/documentation/)
 
 ## Communities
 
-- [Hyas Discussions](https://github.com/h-enk/hyas/discussions)
+- [Thulite Discussions](https://github.com/thuliteio/thulite/discussions)
 - [Hugo Forums](https://discourse.gohugo.io/)

@@ -1,33 +1,33 @@
-# create-hyas
+# create-thulite
 
-Official CLI for scaffolding a new Hyas project.
+Official CLI for scaffolding a new Thulite project.
 
 ## Status
 
-[![npm (scoped)](https://img.shields.io/npm/v/create-hyas?style=flat-square)](https://www.npmjs.com/package/create-hyas)
+[![npm (scoped)](https://img.shields.io/npm/v/create-thulite?style=flat-square)](https://www.npmjs.com/package/create-thulite)
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) — `v16.12.0` or higher
+- [Node.js](https://nodejs.org/) — `v20.11.0` or higher
 
 ## How to use
 
 ### npm
 
 ```bash
-npm create hyas@latest
+npm create thulite@latest
 ```
 
 ### Yarn
 
 ```bash
-yarn create hyas
+yarn create thulite
 ```
 
 ### pnpm
 
 ```bash
-pnpm create hyas@latest
+pnpm create thulite@latest
 ```
 
 Then follow the prompts!
@@ -39,25 +39,26 @@ You can also directly specify the project name and the template you want to use 
 ### npm
 
 ```bash
-npm create hyas@latest my-doks-project -- --template doks
+npm create thulite@latest my-doks-project -- --template doks
 ```
 
 ### Yarn
 
 ```bash
-yarn create hyas my-doks-project --template doks
+yarn create thulite my-doks-project --template doks
 ```
 
 ### pnpm
 
 ```bash
-pnpm create hyas@latest my-doks-project --template doks
+pnpm create thulite@latest my-doks-project --template doks
 ```
 
 ## Templates
 
 Currently supported template presets include:
 
+- `vermeer`
 - `doks`
 - `bolt`
 - `tailwindcss-starter`
@@ -71,12 +72,12 @@ Currently supported template presets include:
 
 The `-rec` variants include the recommended integrations, currently:
 
-- [@hyas-seo](https://github.com/gethyas/seo)
-- [@hyas-images](https://github.com/gethyas/images)
+- [@thulite-seo](https://github.com/thuliteio/seo)
+- [@thulite-images](https://github.com/thuliteio/images)
 
 ## Community templates
 
-You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community templates](https://gethyas.com/templates/community/). 
+You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the [community themes](https://thulite.io/themes/community/).
 
 ### npm
 

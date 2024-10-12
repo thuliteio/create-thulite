@@ -1,5 +1,13 @@
 # create-thulite
 
+## 1.7.1
+
+### Patch Changes
+
+- [#41](https://github.com/thuliteio/create-thulite/pull/41) [`b7e7745`](https://github.com/thuliteio/create-thulite/commit/b7e77452388edc083308bdc5d3d0116b7a250b4f) Thanks [@dependabot](https://github.com/apps/dependabot)! - build(deps-dev): bump rollup from 3.29.4 to 3.29.5
+
+- [#42](https://github.com/thuliteio/create-thulite/pull/42) [`328fd42`](https://github.com/thuliteio/create-thulite/commit/328fd426629895dae016f623cf95362d35e4b94c) Thanks [@h-enk](https://github.com/h-enk)! - Replaced deprecated seo.noindex key with seo.robots key
+
 ## 1.7.0
 
 ### Minor Changes

@@ -8,7 +8,7 @@ seo:
   title: "Johannes Vermeer" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
-  noindex: false # false (default) or true
+  robots: "" # custom robot tags (optional)
 ---
 
 Uh oh! Where's my Vermeer theme?

@@ -9,7 +9,7 @@ seo:
   title: "Bolt" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
-  noindex: false # false (default) or true
+  robots: "" # custom robot tags (optional)
 ---
 
 Bolt is a minimal blog theme for Thulite based on [Bolt.css](https://boltcss.com/).

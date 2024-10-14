@@ -11,6 +11,4 @@ seo:
   robots: "" # custom robot tags (optional)
 ---
 
-Uh oh! Where's my Vermeer theme?
-
-You need to [install Vermeer](https://vermeer.thulite.io/docs/start-here/installation/)
+Vermeer is a one-page profile theme for Thulite that will make you stand out. Unique design, accessible, and easy setup. Pick one of the 13 color schemes included or easily create your own.

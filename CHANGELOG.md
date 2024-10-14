@@ -1,5 +1,11 @@
 # create-thulite
 
+## 1.7.2
+
+### Patch Changes
+
+- [#43](https://github.com/thuliteio/create-thulite/pull/43) [`2ab3d7f`](https://github.com/thuliteio/create-thulite/commit/2ab3d7fedd20796b63c96f7c91860979cbc26974) Thanks [@h-enk](https://github.com/h-enk)! - Align with Vermeer demo website
+
 ## 1.7.1
 
 ### Patch Changes

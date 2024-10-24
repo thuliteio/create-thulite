@@ -14,7 +14,7 @@
   "dependencies": {
     "@thulite/bootstrap": "^1.2.0",
     "@thulite/images": "^3.3.0",
-    "@thulite/seo": "^2.4.0",
+    "@thulite/seo": "^2.4.1",
     "thulite": "^2.5.0"
   },
   "devDependencies": {

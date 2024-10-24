@@ -1,5 +1,12 @@
 # create-thulite
 
+## 1.7.3
+
+### Patch Changes
+
+- [#44](https://github.com/thuliteio/create-thulite/pull/44) [`5be08a7`](https://github.com/thuliteio/create-thulite/commit/5be08a781f33cbaf488859eaec9c47aadf174cee) Thanks [@h-enk](https://github.com/h-enk)! - - Bump versions [@thulite/doks-core](https://www.npmjs.com/package/@thulite/doks-core) and [@thulite/seo](https://www.npmjs.com/package/@thulite/seo)
+  - Update Vermeer template for customizations support
+
 ## 1.7.2
 
 ### Patch Changes

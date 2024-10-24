@@ -1,12 +1,12 @@
 # Hugo
 title = "Johannes Vermeer"
-description = "Vermeer is a paid profile theme for Thulite. Add your photograph, bio, links, and socials, and your profile page is ready to go."
+description = "Vermeer is a sleek, one-page profile theme for Thulite. With its unique design and delightful color schemes, Vermeer ensures your profile leaves a lasting impression."
 images = ["cover.png"]
 
 footer = "Brought to you by <a href=\"https://thulite.io/\">Thulite</a>"
 
 [vermeer]
-  colorScheme = "Default" # Brooklyn, Default, Emerson, Franklin, Inverted, Kennedy, Morgan, Paisley, Quinn, Seraphina, Skylar, Wilde, or Zoey
+  colorScheme = "Default" # Brooklyn, Custom, Default, Emerson, Franklin, Inverted, Kennedy, Morgan, Paisley, Quinn, Seraphina, Skylar, Wilde, or Zoey
 
 [social]
   twitter = "thuliteio"
@@ -33,18 +33,16 @@ footer = "Brought to you by <a href=\"https://thulite.io/\">Thulite</a>"
 # SEO (@thulite/seo)
 [seo]
   [seo.title]
-    separator = " | "
+    separator = "|"
     suffix = ""
   [seo.favicons]
     sizes = []
     icon = "favicon.png" # favicon.png (default)
     svgIcon = "favicon.svg" # favicon.svg (default)
-    maskIcon = "mask-icon.svg" # mask-icon.svg (default)
-    maskIconColor = "white" # white (default)
   [seo.schemas]
     type = "Person" # Organization (default) or Person
     logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
-    name = "Thulite" # Name of Organization or Person
+    name = "Johannes Vermeer" # Name of Organization or Person
     sameAs = [] # E.g. ["https://github.com/thuliteio/thulite", "https://fosstodon.org/@thulite"]
     images = ["cover.png"] # ["cover.png"] (default)
     article = [] # Article sections

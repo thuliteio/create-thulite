@@ -1,6 +1,6 @@
 # Hugo
 title = "Johannes Vermeer"
-description = "Vermeer is a sleek, one-page profile theme for Thulite. With its unique design and delightful color schemes, Vermeer ensures your profile leaves a lasting impression."
+description = "Vermeer is a one-page profile theme for Thulite. It features a unique design, easy setup, and 13 different color schemes."
 images = ["cover.png"]
 
 footer = "Brought to you by <a href=\"https://thulite.io/\">Thulite</a>"

@@ -1,0 +1,26 @@
+{
+  "name": "basic-starter-rec",
+  "version": "0.0.0",
+  "description": "Thulite",
+  "author": "Thulite",
+  "license": "MIT",
+  "scripts": {
+    "create": "hugo new",
+    "dev": "hugo server --disableFastRender --noHTTPCache",
+    "format": "prettier **/** -w -c",
+    "build": "hugo --minify --gc",
+    "preview": "vite preview --outDir public"
+  },
+  "dependencies": {
+    "@thulite/images": "^3.3.1",
+    "@thulite/seo": "^2.4.1",
+    "thulite": "^2.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "vite": "^7.0.4"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

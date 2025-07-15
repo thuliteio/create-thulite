@@ -1,0 +1,29 @@
+{
+  "htmlElements": {
+    "tags": [
+      "base",
+      "body",
+      "code",
+      "h1",
+      "head",
+      "html",
+      "img",
+      "link",
+      "meta",
+      "noscript",
+      "p",
+      "script",
+      "style",
+      "title"
+    ],
+    "classes": [
+      "blur-up",
+      "home",
+      "lazyload",
+      "single"
+    ],
+    "ids": [
+      "congrats-on-setting-up-a-new-thulite-project"
+    ]
+  }
+}

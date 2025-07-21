@@ -15,7 +15,7 @@ export default function licensePlugin(
       // https://github.com/rollup/rollup/blob/master/build-plugins/generate-license-file.js
       // MIT Licensed https://github.com/rollup/rollup/blob/master/LICENSE-CORE.md
       const coreLicense = fs.readFileSync(
-        new URL('./LICENSE', import.meta.url),
+        new URL('./MIT-LICENSE', import.meta.url),
       )
 
       const deps = sortDependencies(dependencies)

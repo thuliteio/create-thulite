@@ -12,10 +12,10 @@ export default defineConfig(() => ({
   plugins: [
     licensePlugin(
       path.resolve(__dirname, './LICENSE'),
-      'create-vite license',
-      'create-vite',
-      '# License of the files in the directories starting with "template-" in create-vite\n' +
-        'The files in the directories starting with "template-" in create-vite and files\n' +
+      'create-thulite license',
+      'create-thulite',
+      '# License of the files in the directories starting with "template-" in create-thulite\n' +
+        'The files in the directories starting with "template-" in create-thulite and files\n' +
         'generated from those files are licensed under the CC0 1.0 Universal license:\n\n' +
         cc0LicenseText +
         '\n\n',

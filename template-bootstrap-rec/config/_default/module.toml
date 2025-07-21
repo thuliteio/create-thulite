@@ -38,6 +38,11 @@
 
 ## layouts
 [[mounts]]
+  source = "layouts"
+  target = "layouts"
+
+[[mounts]]
+  excludeFiles = "index.html"
   source = "node_modules/@thulite/core/layouts"
   target = "layouts"
 
@@ -51,10 +56,6 @@
 
 [[mounts]]
   source = "node_modules/@thulite/images/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "layouts"
   target = "layouts"
 
 ## static

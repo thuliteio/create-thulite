@@ -36,7 +36,7 @@ const cwd = process.cwd()
 
 // prettier-ignore
 const helpMessage = `\
-Usage: create-thulite [OPTION]... [DIRECTORY]
+Usage: create-thulite [OPTIONS]... [DIRECTORY]
 
 Create a new Thulite project with or without recommended integrations (SEO and Images).
 With no arguments, start the CLI in interactive mode.

@@ -1,5 +1,5 @@
 ---
-title : "Welcome to Thulite"
+title : "My Thulite site"
 description: "Congrats on setting up a new Thulite project!"
 lead: "Congrats on setting up a new Thulite project!"
 date: 2020-04-17T12:18:10+00:00
@@ -12,4 +12,8 @@ seo:
   robots: "" # custom robot tags (optional)
 ---
 
-This line is from `./content/_index.md` :rocket:
+{{< img process="fill 800x450" src="images/paul-pascale-FI9QMIVMdCM-unsplash.jpg" alt="Grey and white tabby cat" >}}
+
+# Congrats on setting up a new Thulite project!
+
+This line is from `content/_index.md` :rocket:

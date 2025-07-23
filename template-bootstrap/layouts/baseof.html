@@ -11,10 +11,10 @@
     </div>
     {{ block "sidebar-footer" . }}{{ end }}
     {{ partial "footer/footer.html" . }}
-    {{ if templates.Exists "partials/footer/script-footer.html" -}}
+    {{ if templates.Exists "_partials/footer/script-footer.html" -}}
       {{ partial "footer/script-footer.html" . }}
-    {{- else if templates.Exists "partials/footer/script-footer-core.html" -}}
+    {{ else -}}
       {{ partial "footer/script-footer-core.html" . }}
-    {{- end }}
+    {{ end -}}
   </body>
 </html>

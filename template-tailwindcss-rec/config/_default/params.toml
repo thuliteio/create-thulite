@@ -1,7 +1,7 @@
 # Hugo
 title = "My Thulite site"
 description = "Congrats on setting up a new Thulite project!"
-images = ["cover.png"]
+images = ["cover.jpg"]
 
 [social]
   twitter = "thuliteio"
@@ -25,6 +25,10 @@ images = ["cover.png"]
     process = "" # "fill 1600x900" or "fill 2100x900" for example
     lqip = "16x webp q20" # "16x webp q20" or "21x webp q20" for example
 
+# Inline SVG (@thulite/inline-svg)
+[inline_svg]
+  iconSetDir = "tabler-icons" # "tabler-icons" (default)
+
 # SEO (@thulite/seo)
 [seo]
   [seo.title]
@@ -41,7 +45,7 @@ images = ["cover.png"]
     logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
     name = "Thulite" # Name of Organization or Person
     sameAs = [] # E.g. ["https://github.com/thuliteio/thulite", "https://fosstodon.org/@thulite"]
-    images = ["cover.png"] # ["cover.png"] (default)
+    images = ["cover.jpg"] # ["cover.png"] (default)
     article = [] # Article sections
     newsArticle = [] # NewsArticle sections
     blogPosting = ["blog"] # BlogPosting sections

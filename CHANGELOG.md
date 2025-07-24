@@ -1,5 +1,11 @@
 # create-thulite
 
+## 1.8.0
+
+### Minor Changes
+
+- [#47](https://github.com/thuliteio/create-thulite/pull/47) [`bad6441`](https://github.com/thuliteio/create-thulite/commit/bad6441e5ce6266b5fc7ed1aa509dc2cb5c5fdd0) Thanks [@h-enk](https://github.com/h-enk)! - Update CLI for create-vite 7.0.3 and templates for Hugo v0.148.1
+
 ## 1.7.3
 
 ### Patch Changes

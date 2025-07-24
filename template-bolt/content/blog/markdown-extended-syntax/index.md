@@ -11,7 +11,7 @@ seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
-  robots: "" # custom robot tags (optional)
+  noindex: false # false (default) or true
 ---
 
 This Markdown cheat sheet provides a quick overview of all extended Markdown syntax elements. If you need more information about any of these elements, refer to the reference guide for [extended syntax](https://www.markdownguide.org/extended-syntax).
@@ -98,13 +98,13 @@ term
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
-      {.list-unstyled}
+{.list-unstyled}
 ```
 
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
-      {.list-unstyled}
+{.list-unstyled}
 
 ## Emoji
 

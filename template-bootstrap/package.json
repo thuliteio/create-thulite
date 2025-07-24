@@ -1,0 +1,25 @@
+{
+  "name": "bootstrap-starter",
+  "version": "0.0.0",
+  "description": "Thulite Bootstrap starter",
+  "author": "Thulite",
+  "license": "MIT",
+  "scripts": {
+    "create": "hugo new",
+    "dev": "hugo server --disableFastRender --noHTTPCache",
+    "format": "prettier **/** -w -c",
+    "build": "hugo --minify --gc",
+    "preview": "vite preview --outDir public"
+  },
+  "dependencies": {
+    "@thulite/bootstrap": "^1.2.2",
+    "thulite": "^2.6.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "vite": "^7.0.6"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

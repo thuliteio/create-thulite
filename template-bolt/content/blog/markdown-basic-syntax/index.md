@@ -11,7 +11,7 @@ seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
-  robots: "" # custom robot tags (optional)
+  noindex: false # false (default) or true
 ---
 
 This Markdown cheat sheet provides a quick overview of all basic Markdown syntax elements. If you need more information about any of these elements, refer to the reference guide for [basic syntax](https://www.markdownguide.org/basic-syntax).
@@ -111,3 +111,7 @@ _italicized text_
 ```
 
 ![alt text](boxed-water-is-better-5Lw1U5BIumE-unsplash.jpg)
+
+<!--
+{{< img process="fill 800x450" src="images/paul-pascale-FI9QMIVMdCM-unsplash.jpg" alt="Grey and white tabby cat" >}}
+-->

@@ -1,0 +1,24 @@
+{
+  "name": "basic-starter",
+  "version": "0.0.0",
+  "description": "Thulite basic starter",
+  "author": "Thulite",
+  "license": "MIT",
+  "scripts": {
+    "create": "hugo new",
+    "dev": "hugo server --disableFastRender --noHTTPCache",
+    "format": "prettier **/** -w -c",
+    "build": "hugo --minify --gc",
+    "preview": "vite preview --outDir public"
+  },
+  "dependencies": {
+    "thulite": "^2.6.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "vite": "^7.0.6"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

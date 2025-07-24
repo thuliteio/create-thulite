@@ -1,0 +1,8 @@
+# Hugo
+title = "My Thulite site"
+description = "Congrats on setting up a new Thulite project!"
+images = ["cover.jpg"]
+footer = "Built with Thulite"
+
+[social]
+  twitter = "thuliteio"

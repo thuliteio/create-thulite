@@ -28,18 +28,14 @@ const createNonEmptyDir = (overrideFolder?: string) => {
   fs.writeFileSync(pkgJson, '{ "foo": "bar" }')
 }
 
-// Vue 3 starter template
+// Basic starter template
 const templateFiles = fs
-  .readdirSync(path.join(CLI_PATH, 'template-vue'))
-  // _gitignore is renamed to .gitignore
-  .map((filePath) => (filePath === '_gitignore' ? '.gitignore' : filePath))
+  .readdirSync(path.join(CLI_PATH, 'template-basic'))
   .sort()
 
-// React starter template
-const templateFilesReact = fs
-  .readdirSync(path.join(CLI_PATH, 'template-react'))
-  // _gitignore is renamed to .gitignore
-  .map((filePath) => (filePath === '_gitignore' ? '.gitignore' : filePath))
+// Doks starter template
+const templateFilesDoks = fs
+  .readdirSync(path.join(CLI_PATH, 'template-doks'))
   .sort()
 
 const clearAnyPreviousFolders = () => {
@@ -59,23 +55,23 @@ test('prompts for the project name if none supplied', () => {
   expect(stdout).toContain('Project name:')
 })
 
-test('prompts for the framework if none supplied when target dir is current directory', () => {
+test('prompts for the template if none supplied when target dir is current directory', () => {
   fs.mkdirSync(genPath, { recursive: true })
   const { stdout } = run(['.'], { cwd: genPath })
-  expect(stdout).toContain('Select a framework:')
+  expect(stdout).toContain('Select a template:')
 })
 
-test('prompts for the framework if none supplied', () => {
+test('prompts for the template if none supplied', () => {
   const { stdout } = run([projectName])
-  expect(stdout).toContain('Select a framework:')
+  expect(stdout).toContain('Select a template:')
 })
 
-test('prompts for the framework on not supplying a value for --template', () => {
+test('prompts for the template on not supplying a value for --template', () => {
   const { stdout } = run([projectName, '--template'])
-  expect(stdout).toContain('Select a framework:')
+  expect(stdout).toContain('Select a template:')
 })
 
-test('prompts for the framework on supplying an invalid template', () => {
+test('prompts for the template on supplying an invalid template', () => {
   const { stdout } = run([projectName, '--template', 'unknown'])
   expect(stdout).toContain(
     `"unknown" isn't a valid template. Please choose from below:`,
@@ -102,8 +98,8 @@ test('asks to overwrite non-empty current directory', () => {
   expect(stdout).toContain(`Current directory is not empty.`)
 })
 
-test('successfully scaffolds a project based on vue starter template', () => {
-  const { stdout } = run([projectName, '--template', 'vue'], {
+test('successfully scaffolds a project based on basic starter template', () => {
+  const { stdout } = run([projectName, '--template', 'basic'], {
     cwd: __dirname,
   })
   const generatedFiles = fs.readdirSync(genPath).sort()
@@ -113,19 +109,19 @@ test('successfully scaffolds a project based on vue starter template', () => {
   expect(templateFiles).toEqual(generatedFiles)
 })
 
-test('successfully scaffolds a project with subfolder based on react starter template', () => {
-  const { stdout } = run([`subfolder/${projectName}`, '--template', 'react'], {
+test('successfully scaffolds a project with subfolder based on doks starter template', () => {
+  const { stdout } = run([`subfolder/${projectName}`, '--template', 'doks'], {
     cwd: __dirname,
   })
   const generatedFiles = fs.readdirSync(genPathWithSubfolder).sort()
 
   // Assertions
   expect(stdout).toContain(`Scaffolding project in ${genPathWithSubfolder}`)
-  expect(templateFilesReact).toEqual(generatedFiles)
+  expect(templateFilesDoks).toEqual(generatedFiles)
 })
 
 test('works with the -t alias', () => {
-  const { stdout } = run([projectName, '-t', 'vue'], {
+  const { stdout } = run([projectName, '-t', 'basic'], {
     cwd: __dirname,
   })
   const generatedFiles = fs.readdirSync(genPath).sort()
@@ -141,14 +137,14 @@ test('accepts command line override for --overwrite', () => {
   expect(stdout).not.toContain(`Current directory is not empty.`)
 })
 
-test('return help usage how to use create-vite', () => {
+test('return help usage how to use create-thulite', () => {
   const { stdout } = run(['--help'], { cwd: __dirname })
-  const message = 'Usage: create-vite [OPTION]... [DIRECTORY]'
+  const message = 'Usage: create-thulite [OPTIONS]... [DIRECTORY]'
   expect(stdout).toContain(message)
 })
 
-test('return help usage how to use create-vite with -h alias', () => {
+test('return help usage how to use create-thulite with -h alias', () => {
   const { stdout } = run(['--h'], { cwd: __dirname })
-  const message = 'Usage: create-vite [OPTION]... [DIRECTORY]'
+  const message = 'Usage: create-thulite [OPTIONS]... [DIRECTORY]'
   expect(stdout).toContain(message)
 })

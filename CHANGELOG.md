@@ -1,5 +1,11 @@
 # create-thulite
 
+## 1.8.1
+
+### Patch Changes
+
+- [#48](https://github.com/thuliteio/create-thulite/pull/48) [`bad4479`](https://github.com/thuliteio/create-thulite/commit/bad4479dae8fdf693b4ce7ecdbf1e28decc70c9f) Thanks [@h-enk](https://github.com/h-enk)! - Fix template glob pattern
+
 ## 1.8.0
 
 ### Minor Changes

@@ -11,8 +11,6 @@
   "files": [
     "index.js",
     "template-*/**/*",
-    "template-*/.gitignore",
-    "template-*/.npmignore",
     "dist"
   ],
   "main": "index.js",

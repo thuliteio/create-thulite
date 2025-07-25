@@ -28,15 +28,26 @@ const createNonEmptyDir = (overrideFolder?: string) => {
   fs.writeFileSync(pkgJson, '{ "foo": "bar" }')
 }
 
+// File renaming mapping used by the CLI
+const renameFiles: Record<string, string> = {
+  _gitignore: '.gitignore',
+  _npmignore: '.npmignore',
+  _npmrc: '.npmrc',
+}
+
+// Apply the same renaming logic as the CLI
+const applyRenaming = (files: string[]) =>
+  files.map(file => renameFiles[file] ?? file).sort()
+
 // Basic starter template
-const templateFiles = fs
-  .readdirSync(path.join(CLI_PATH, 'template-basic'))
-  .sort()
+const templateFiles = applyRenaming(
+  fs.readdirSync(path.join(CLI_PATH, 'template-basic'))
+)
 
 // Doks starter template
-const templateFilesDoks = fs
-  .readdirSync(path.join(CLI_PATH, 'template-doks'))
-  .sort()
+const templateFilesDoks = applyRenaming(
+  fs.readdirSync(path.join(CLI_PATH, 'template-doks'))
+)
 
 const clearAnyPreviousFolders = () => {
   if (fs.existsSync(genPath)) {

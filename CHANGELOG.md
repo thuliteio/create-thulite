@@ -1,5 +1,13 @@
 # create-thulite
 
+## 1.8.3
+
+### Patch Changes
+
+- [#57](https://github.com/thuliteio/create-thulite/pull/57) [`dc00793`](https://github.com/thuliteio/create-thulite/commit/dc0079336978a59261917f8f95f6dff4bcbebe48) Thanks [@h-enk](https://github.com/h-enk)! - Fix npm help argument not passed
+
+- [#56](https://github.com/thuliteio/create-thulite/pull/56) [`b8ca5f2`](https://github.com/thuliteio/create-thulite/commit/b8ca5f297f7362c0288033d0f76f37d9db43b516) Thanks [@h-enk](https://github.com/h-enk)! - Fix: .gitignore and .npmignore files not published with templates — pt. II
+
 ## 1.8.2
 
 ### Patch Changes

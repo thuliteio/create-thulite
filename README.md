@@ -10,7 +10,7 @@ Official CLI for scaffolding a new Thulite project.
 
 - [Node.js](https://nodejs.org/) — `v20.19.0` or higher
 
-## How to use
+## Usage
 
 ### npm
 
@@ -85,6 +85,34 @@ Templates without recommended integrations:
 - `tailwindcss`
 - `bootstrap`
 - `basic`
+
+## Help
+
+You can view all available options and templates using the help command:
+
+### npm
+
+```bash
+npx create-thulite@latest --help
+```
+
+### Yarn
+
+```bash
+yarn create thulite --help
+```
+
+### pnpm
+
+```bash
+pnpm create thulite --help
+```
+
+### bun
+
+```bash
+bun create thulite --help
+```
 
 ## Troubleshooting
 

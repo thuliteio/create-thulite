@@ -377,12 +377,6 @@ async function init() {
   const argTemplate = argv.template || argv._[1]
   const argOverwrite = argv.overwrite
 
-  const help = argv.help
-  if (help) {
-    console.log(helpMessage)
-    return
-  }
-
   // Check for potential Yarn permission issues on Windows
   checkYarnPermissions()
 
@@ -745,6 +739,12 @@ function checkYarnPermissions() {
       console.warn(colors.yellow('3. Or delete the .yarnrc file in your home directory\n'))
     }
   }
+}
+
+// Handle help flag synchronously to avoid unnecessary async initialization
+if (argv.help) {
+  console.log(helpMessage)
+  process.exit(0)
 }
 
 init().catch((e) => {

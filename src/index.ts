@@ -741,7 +741,7 @@ function checkYarnPermissions() {
   }
 }
 
-// Check for help flag first, before any async operations
+// Handle help flag synchronously to avoid unnecessary async initialization
 if (argv.help) {
   console.log(helpMessage)
   process.exit(0)

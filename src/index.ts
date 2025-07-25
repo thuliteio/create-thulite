@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import spawn from 'cross-spawn'
@@ -54,7 +55,10 @@ ${reset('  basic-rec')}
 ${reset('Templates without recommended integrations:')}
 ${reset('  tailwindcss')}
 ${reset('  bootstrap')}
-${reset('  basic')}`
+${reset('  basic')}
+
+${reset('Note: On Windows, if you encounter permission errors with Yarn,')}
+${reset('try running as Administrator or use npm instead.')}`
 
 type ColorFunc = (str: string | number) => string
 type Framework = {
@@ -373,6 +377,9 @@ async function init() {
     return
   }
 
+  // Check for potential Yarn permission issues on Windows
+  checkYarnPermissions()
+
   const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
   const cancel = () => prompts.cancel('Operation cancelled')
 
@@ -513,10 +520,17 @@ async function init() {
     const replacedArgs = args.map((arg) =>
       arg.replace('TARGET_DIR', () => targetDir),
     )
-    const { status } = spawn.sync(command, replacedArgs, {
-      stdio: 'inherit',
-    })
-    process.exit(status ?? 0)
+
+    try {
+      const { status } = spawn.sync(command, replacedArgs, {
+        stdio: 'inherit',
+      })
+      process.exit(status ?? 0)
+    } catch (error) {
+      console.error(`Error executing command: ${fullCustomCommand}`)
+      console.error(error)
+      process.exit(1)
+    }
   }
 
   prompts.log.step(`Scaffolding project in ${root}...`)
@@ -705,6 +719,26 @@ function getFullCustomCommand(customCommand: string, pkgInfo?: PkgInfo) {
         return 'npm exec'
       })
   )
+}
+
+function checkYarnPermissions() {
+  // On Windows, check for common Yarn permission issues
+  if (process.platform === 'win32') {
+    const yarnrcPath = path.join(os.homedir(), '.yarnrc')
+
+    try {
+      if (fs.existsSync(yarnrcPath)) {
+        // Try to read the file to check permissions
+        fs.readFileSync(yarnrcPath, 'utf-8')
+      }
+    } catch (error) {
+      console.warn(colors.yellow('\n⚠️  Warning: Detected potential Yarn permissions issue on Windows.'))
+      console.warn(colors.yellow('If you encounter EPERM errors, try:'))
+      console.warn(colors.yellow('1. Run PowerShell as Administrator'))
+      console.warn(colors.yellow('2. Or use: npm create thulite@latest instead'))
+      console.warn(colors.yellow('3. Or delete the .yarnrc file in your home directory\n'))
+    }
+  }
 }
 
 init().catch((e) => {

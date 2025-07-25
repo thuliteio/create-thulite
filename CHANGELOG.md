@@ -1,5 +1,15 @@
 # create-thulite
 
+## 1.8.4
+
+### Patch Changes
+
+- [#60](https://github.com/thuliteio/create-thulite/pull/60) [`ba98eec`](https://github.com/thuliteio/create-thulite/commit/ba98eec1bb14b1e4a1e875ed33519447f2ab706b) Thanks [@h-enk](https://github.com/h-enk)! - Fix .npmrc template directories not in published package
+
+- [#62](https://github.com/thuliteio/create-thulite/pull/62) [`d450a28`](https://github.com/thuliteio/create-thulite/commit/d450a2809923d8c674af3f277ea43905c49c1ffa) Thanks [@h-enk](https://github.com/h-enk)! - Fix tests
+
+- [#61](https://github.com/thuliteio/create-thulite/pull/61) [`1d0a5ee`](https://github.com/thuliteio/create-thulite/commit/1d0a5ee908a89e70e137c8c13161a9d65825a9d3) Thanks [@h-enk](https://github.com/h-enk)! - Add help instructions
+
 ## 1.8.3
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # create-thulite
 
+## 1.8.2
+
+### Patch Changes
+
+- [#53](https://github.com/thuliteio/create-thulite/pull/53) [`26adad8`](https://github.com/thuliteio/create-thulite/commit/26adad8bcf007dd5a6e92b246449d1e186cdf477) Thanks [@h-enk](https://github.com/h-enk)! - Fix npm template argument not passed
+
+- [#52](https://github.com/thuliteio/create-thulite/pull/52) [`cfb5b0f`](https://github.com/thuliteio/create-thulite/commit/cfb5b0f64c21dacba6fb8ea7485ba0349d202c6e) Thanks [@h-enk](https://github.com/h-enk)! - Fix EPERM error during Yarn install on Windows
+
+- [#54](https://github.com/thuliteio/create-thulite/pull/54) [`6f621b9`](https://github.com/thuliteio/create-thulite/commit/6f621b9b9732b440c20b8c279673854f1446eb80) Thanks [@h-enk](https://github.com/h-enk)! - Fix: .gitignore and .npmignore files not published with templates
+
 ## 1.8.1
 
 ### Patch Changes

@@ -37,7 +37,7 @@ const cwd = process.cwd()
 
 // prettier-ignore
 const helpMessage = `\
-Usage: create-thulite [OPTIONS]... [DIRECTORY]
+Usage: create-thulite [OPTIONS]... [DIRECTORY] [TEMPLATE]
 
 Create a new Thulite project with or without recommended integrations (SEO and Images).
 With no arguments, start the CLI in interactive mode.
@@ -56,6 +56,10 @@ ${reset('Templates without recommended integrations:')}
 ${reset('  tailwindcss')}
 ${reset('  bootstrap')}
 ${reset('  basic')}
+
+${reset('Examples:')}
+${reset('  npm create thulite@latest my-project -- --template doks')}
+${reset('  npm create thulite@latest my-project doks')}
 
 ${reset('Note: On Windows, if you encounter permission errors with Yarn,')}
 ${reset('try running as Administrator or use npm instead.')}`
@@ -368,7 +372,8 @@ async function init() {
   const argTargetDir = argv._[0]
     ? formatTargetDir(String(argv._[0]))
     : undefined
-  const argTemplate = argv.template
+  // Support both --template flag and second positional argument
+  const argTemplate = argv.template || argv._[1]
   const argOverwrite = argv.overwrite
 
   const help = argv.help
@@ -454,7 +459,7 @@ async function init() {
   }
 
   // 4. Choose a framework and variant
-  let template = argTemplate
+  let template: string | undefined = argTemplate
   let hasInvalidArgTemplate = false
   if (argTemplate && !TEMPLATES.includes(argTemplate)) {
     template = undefined

@@ -86,6 +86,35 @@ Templates without recommended integrations:
 - `bootstrap`
 - `basic`
 
+## Troubleshooting
+
+### Windows Permission Errors with Yarn
+
+If you encounter `EPERM: operation not permitted` errors when using Yarn on Windows, try one of these solutions:
+
+1. **Run as Administrator**: Right-click PowerShell and select "Run as Administrator"
+
+2. **Use npm instead**:
+
+   ```bash
+   npm create thulite@latest my-project -- --template doks
+   ```
+
+3. **Fix .yarnrc permissions**:
+
+   ```powershell
+   $yarnrcPath = "$env:USERPROFILE\.yarnrc"
+   if (Test-Path $yarnrcPath) {
+       icacls $yarnrcPath /grant "$env:USERNAME:(F)"
+   }
+   ```
+
+4. **Delete problematic .yarnrc** (if safe to do so):
+
+   ```powershell
+   Remove-Item "$env:USERPROFILE\.yarnrc" -Force
+   ```
+
 ## Credits
 
 This npm package is based on:

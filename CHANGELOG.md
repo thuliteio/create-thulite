@@ -1,5 +1,11 @@
 # create-thulite
 
+## 1.8.5
+
+### Patch Changes
+
+- [#63](https://github.com/thuliteio/create-thulite/pull/63) [`6fddcc7`](https://github.com/thuliteio/create-thulite/commit/6fddcc7805c1e52147f0b7cd7b156ca2b0c214a1) Thanks [@h-enk](https://github.com/h-enk)! - Fix layouts mounting order
+
 ## 1.8.4
 
 ### Patch Changes

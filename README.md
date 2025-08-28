@@ -1,4 +1,4 @@
-# create-thulite
+# Thulite CLI
 
 Official CLI for scaffolding a new Thulite project.
 

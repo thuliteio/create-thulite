@@ -1,36 +1,26 @@
 import fs from 'node:fs'
-import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { SpawnOptions } from 'node:child_process'
 import spawn from 'cross-spawn'
 import mri from 'mri'
 import * as prompts from '@clack/prompts'
 import colors from 'picocolors'
+import { determineAgent } from '@vercel/detect-agent'
 
 const {
-  /*
-  blue,
-  blueBright,
-  cyan,
-  green,
-  greenBright,
-  magenta,
-  red,
-  redBright,
-  */
   reset,
-  /*
-  yellow,
-  */
 } = colors
 
 const argv = mri<{
   template?: string
   help?: boolean
   overwrite?: boolean
+  immediate?: boolean
+  interactive?: boolean
 }>(process.argv.slice(2), {
-  alias: { h: 'help', t: 'template' },
-  boolean: ['help', 'overwrite'],
+  boolean: ['help', 'overwrite', 'immediate', 'interactive'],
+  alias: { h: 'help', t: 'template', i: 'immediate' },
   string: ['template'],
 })
 const cwd = process.cwd()
@@ -40,10 +30,12 @@ const helpMessage = `\
 Usage: create-thulite [OPTIONS]... [DIRECTORY] [TEMPLATE]
 
 Create a new Thulite project with or without recommended integrations (SEO and Images).
-With no arguments, start the CLI in interactive mode.
+When running in TTY, the CLI will start in interactive mode.
 
 Options:
-  -t, --template NAME        use a specific template
+  -t, --template NAME                   use a specific template
+  -i, --immediate                       install dependencies and start dev
+  --interactive / --no-interactive      force interactive / non-interactive mode
 
 ${reset('Templates with recommended integrations (SEO and Images):')}
 ${reset('  doks')}
@@ -118,20 +110,6 @@ const FRAMEWORKS: Framework[] = [
         display: 'Without recommended integrations',
         color: reset,
       },
-      /*
-      {
-        name: 'custom-create-vue',
-        display: 'Official Vue Starter ↗',
-        color: green,
-        customCommand: 'npm create vue@latest TARGET_DIR',
-      },
-      {
-        name: 'custom-nuxt',
-        display: 'Nuxt ↗',
-        color: greenBright,
-        customCommand: 'npm exec nuxi init TARGET_DIR',
-      },
-      */
     ],
   },
   {
@@ -149,45 +127,6 @@ const FRAMEWORKS: Framework[] = [
         display: 'Without recommended integrations',
         color: reset,
       },
-      /*
-      {
-        name: 'react',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'react-swc',
-        display: 'JavaScript + SWC',
-        color: yellow,
-      },
-      {
-        name: 'custom-react-router',
-        display: 'React Router v7 ↗',
-        color: cyan,
-        customCommand: 'npm create react-router@latest TARGET_DIR',
-      },
-      {
-        name: 'custom-tanstack-router',
-        display: 'TanStack Router ↗',
-        color: cyan,
-        customCommand:
-          'npm create -- tsrouter-app@latest TARGET_DIR --framework React --interactive',
-      },
-      {
-        name: 'redwoodsdk-standard',
-        display: 'RedwoodSDK ↗',
-        color: red,
-        customCommand:
-          'npm exec degit redwoodjs/sdk/starters/standard TARGET_DIR',
-      },
-      {
-        name: 'rsc',
-        display: 'RSC ↗',
-        color: magenta,
-        customCommand:
-          'npm exec degit vitejs/vite-plugin-react/packages/plugin-rsc/examples/starter TARGET_DIR',
-      },
-      */
     ],
   },
   {
@@ -205,156 +144,8 @@ const FRAMEWORKS: Framework[] = [
         display: 'Without recommended integrations',
         color: reset,
       },
-      /*
-      {
-        name: 'custom-create-preact',
-        display: 'Official Preact Starter ↗',
-        color: magenta,
-        customCommand: 'npm create preact@latest TARGET_DIR',
-      },
-      */
     ],
   },
-  /*
-  {
-    name: 'lit',
-    display: 'Lit',
-    color: redBright,
-    variants: [
-      {
-        name: 'lit-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'lit',
-        display: 'JavaScript',
-        color: yellow,
-      },
-    ],
-  },
-  {
-    name: 'svelte',
-    display: 'Svelte',
-    color: red,
-    variants: [
-      {
-        name: 'svelte-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'svelte',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'custom-svelte-kit',
-        display: 'SvelteKit ↗',
-        color: red,
-        customCommand: 'npm exec sv create TARGET_DIR',
-      },
-    ],
-  },
-  {
-    name: 'solid',
-    display: 'Solid',
-    color: blue,
-    variants: [
-      {
-        name: 'solid-ts',
-        display: 'TypeScript',
-        color: blue,
-      },
-      {
-        name: 'solid',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'custom-tanstack-router',
-        display: 'TanStack Router ↗',
-        color: cyan,
-        customCommand:
-          'npm create -- tsrouter-app@latest TARGET_DIR --framework Solid --interactive',
-      },
-    ],
-  },
-  {
-    name: 'qwik',
-    display: 'Qwik',
-    color: blueBright,
-    variants: [
-      {
-        name: 'qwik-ts',
-        display: 'TypeScript',
-        color: blueBright,
-      },
-      {
-        name: 'qwik',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
-        name: 'custom-qwik-city',
-        display: 'QwikCity ↗',
-        color: blueBright,
-        customCommand: 'npm create qwik@latest basic TARGET_DIR',
-      },
-    ],
-  },
-  {
-    name: 'angular',
-    display: 'Angular',
-    color: red,
-    variants: [
-      {
-        name: 'custom-angular',
-        display: 'Angular ↗',
-        color: red,
-        customCommand: 'npm exec @angular/cli@latest new TARGET_DIR',
-      },
-      {
-        name: 'custom-analog',
-        display: 'Analog ↗',
-        color: yellow,
-        customCommand: 'npm create analog@latest TARGET_DIR',
-      },
-    ],
-  },
-  {
-    name: 'marko',
-    display: 'Marko',
-    color: magenta,
-    variants: [
-      {
-        name: 'marko-run',
-        display: 'Marko Run ↗',
-        color: magenta,
-        customCommand: 'npm create -- marko@latest --name TARGET_DIR',
-      },
-    ],
-  },
-  {
-    name: 'others',
-    display: 'Others',
-    color: reset,
-    variants: [
-      {
-        name: 'create-vite-extra',
-        display: 'Extra Vite Starters ↗',
-        color: reset,
-        customCommand: 'npm create vite-extra@latest TARGET_DIR',
-      },
-      {
-        name: 'create-electron-vite',
-        display: 'Electron ↗',
-        color: reset,
-        customCommand: 'npm create electron-vite@latest TARGET_DIR',
-      },
-    ],
-  },
-  */
 ]
 
 const TEMPLATES = FRAMEWORKS.map((f) => f.variants.map((v) => v.name)).reduce(
@@ -370,16 +161,69 @@ const renameFiles: Record<string, string | undefined> = {
 
 const defaultTargetDir = 'thulite-project'
 
+function run([command, ...args]: string[], options?: SpawnOptions) {
+  const { status, error } = spawn.sync(command, args, options)
+  if (status != null && status > 0) {
+    process.exit(status)
+  }
+
+  if (error) {
+    console.error(`\n${command} ${args.join(' ')} error!`)
+    console.error(error)
+    process.exit(1)
+  }
+}
+
+function install(root: string, agent: string) {
+  if (process.env._VITE_TEST_CLI) {
+    prompts.log.step(
+      `Installing dependencies with ${agent}... (skipped in test)`,
+    )
+    return
+  }
+  prompts.log.step(`Installing dependencies with ${agent}...`)
+  run(getInstallCommand(agent), {
+    stdio: 'inherit',
+    cwd: root,
+  })
+}
+
+function start(root: string, agent: string) {
+  if (process.env._VITE_TEST_CLI) {
+    prompts.log.step('Starting dev server... (skipped in test)')
+    return
+  }
+  prompts.log.step('Starting dev server...')
+  run(getRunCommand(agent, 'dev'), {
+    stdio: 'inherit',
+    cwd: root,
+  })
+}
+
 async function init() {
   const argTargetDir = argv._[0]
     ? formatTargetDir(String(argv._[0]))
     : undefined
-  // Support both --template flag and second positional argument
-  const argTemplate = argv.template || argv._[1]
+  const argTemplate = argv.template
   const argOverwrite = argv.overwrite
+  const argImmediate = argv.immediate
+  const argInteractive = argv.interactive
 
-  // Check for potential Yarn permission issues on Windows
-  checkYarnPermissions()
+  const help = argv.help
+  if (help) {
+    console.log(helpMessage)
+    return
+  }
+
+  const interactive = argInteractive ?? process.stdin.isTTY
+
+  // Detect AI agent environment for better agent experience (AX)
+  const { isAgent } = await determineAgent()
+  if (isAgent && interactive) {
+    console.log(
+      '\nTo create in one go, run: create-thulite <DIRECTORY> --no-interactive --template <TEMPLATE>\n',
+    )
+  }
 
   const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
   const cancel = () => prompts.cancel('Operation cancelled')
@@ -387,25 +231,32 @@ async function init() {
   // 1. Get project name and target dir
   let targetDir = argTargetDir
   if (!targetDir) {
-    const projectName = await prompts.text({
-      message: 'Project name:',
-      defaultValue: defaultTargetDir,
-      placeholder: defaultTargetDir,
-      validate: (value) => {
-        return value.length === 0 || formatTargetDir(value).length > 0
-          ? undefined
-          : 'Invalid project name'
-      },
-    })
-    if (prompts.isCancel(projectName)) return cancel()
-    targetDir = formatTargetDir(projectName)
+    if (interactive) {
+      const projectName = await prompts.text({
+        message: 'Project name:',
+        defaultValue: defaultTargetDir,
+        placeholder: defaultTargetDir,
+        validate: (value) => {
+          return value.length === 0 || formatTargetDir(value).length > 0
+            ? undefined
+            : 'Invalid project name'
+        },
+      })
+      if (prompts.isCancel(projectName)) return cancel()
+      targetDir = formatTargetDir(projectName)
+    } else {
+      targetDir = defaultTargetDir
+    }
   }
 
   // 2. Handle directory if exist and not empty
   if (fs.existsSync(targetDir) && !isEmpty(targetDir)) {
-    const overwrite = argOverwrite
+    let overwrite: 'yes' | 'no' | 'ignore' | undefined = argOverwrite
       ? 'yes'
-      : await prompts.select({
+      : undefined
+    if (!overwrite) {
+      if (interactive) {
+        const res = await prompts.select({
           message:
             (targetDir === '.'
               ? 'Current directory'
@@ -426,7 +277,13 @@ async function init() {
             },
           ],
         })
-    if (prompts.isCancel(overwrite)) return cancel()
+        if (prompts.isCancel(res)) return cancel()
+        overwrite = res
+      } else {
+        overwrite = 'no'
+      }
+    }
+
     switch (overwrite) {
       case 'yes':
         emptyDir(targetDir)
@@ -440,75 +297,100 @@ async function init() {
   // 3. Get package name
   let packageName = path.basename(path.resolve(targetDir))
   if (!isValidPackageName(packageName)) {
-    const packageNameResult = await prompts.text({
-      message: 'Package name:',
-      defaultValue: toValidPackageName(packageName),
-      placeholder: toValidPackageName(packageName),
-      validate(dir) {
-        if (!isValidPackageName(dir)) {
-          return 'Invalid package.json name'
-        }
-      },
-    })
-    if (prompts.isCancel(packageNameResult)) return cancel()
-    packageName = packageNameResult
+    if (interactive) {
+      const packageNameResult = await prompts.text({
+        message: 'Package name:',
+        defaultValue: toValidPackageName(packageName),
+        placeholder: toValidPackageName(packageName),
+        validate(dir) {
+          if (!isValidPackageName(dir)) {
+            return 'Invalid package.json name'
+          }
+        },
+      })
+      if (prompts.isCancel(packageNameResult)) return cancel()
+      packageName = packageNameResult
+    } else {
+      packageName = toValidPackageName(packageName)
+    }
   }
 
   // 4. Choose a framework and variant
-  let template: string | undefined = argTemplate
+  let template = argTemplate
   let hasInvalidArgTemplate = false
   if (argTemplate && !TEMPLATES.includes(argTemplate)) {
     template = undefined
     hasInvalidArgTemplate = true
   }
   if (!template) {
-    const framework = await prompts.select({
-      message: hasInvalidArgTemplate
-        ? `"${argTemplate}" isn't a valid template. Please choose from below: `
-        : 'Select a template:',
-      options: FRAMEWORKS.map((framework) => {
-        const frameworkColor = framework.color
-        return {
-          label: frameworkColor(framework.display || framework.name),
-          value: framework,
-        }
-      }),
-    })
-    if (prompts.isCancel(framework)) return cancel()
+    if (interactive) {
+      const framework = await prompts.select({
+        message: hasInvalidArgTemplate
+          ? `"${argTemplate}" isn't a valid template. Please choose from below: `
+          : 'Select a template:',
+        options: FRAMEWORKS.map((framework) => {
+          const frameworkColor = framework.color
+          return {
+            label: frameworkColor(framework.display || framework.name),
+            value: framework,
+          }
+        }),
+      })
+      if (prompts.isCancel(framework)) return cancel()
 
-    const variant = await prompts.select({
-      message: 'Select a variant:',
-      options: framework.variants.map((variant) => {
-        const variantColor = variant.color
-        const command = variant.customCommand
-          ? getFullCustomCommand(variant.customCommand, pkgInfo).replace(
-              / TARGET_DIR$/,
-              '',
-            )
-          : undefined
-        return {
-          label: variantColor(variant.display || variant.name),
-          value: variant.name,
-          hint: command,
-        }
-      }),
-    })
-    if (prompts.isCancel(variant)) return cancel()
+      const variant = await prompts.select({
+        message: 'Select a variant:',
+        options: framework.variants.map((variant) => {
+          const variantColor = variant.color
+          const command = variant.customCommand
+            ? getFullCustomCommand(variant.customCommand, pkgInfo).replace(
+                / TARGET_DIR$/,
+                '',
+              )
+            : undefined
+          return {
+            label: variantColor(variant.display || variant.name),
+            value: variant.name,
+            hint: command,
+          }
+        }),
+      })
+      if (prompts.isCancel(variant)) return cancel()
 
-    template = variant
+      template = variant
+    } else {
+      template = 'basic'
+    }
+  }
+
+  const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
+
+  // 5. Ask about immediate install and package manager
+  let immediate = argImmediate
+  if (immediate === undefined) {
+    if (interactive) {
+      const immediateResult = await prompts.confirm({
+        message: `Install with ${pkgManager} and start now?`,
+      })
+      if (prompts.isCancel(immediateResult)) return cancel()
+      immediate = immediateResult
+    } else {
+      immediate = false
+    }
   }
 
   const root = path.join(cwd, targetDir)
-  fs.mkdirSync(root, { recursive: true })
-
   // determine template
   let isReactSwc = false
   if (template.includes('-swc')) {
     isReactSwc = true
     template = template.replace('-swc', '')
   }
-
-  const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
+  let isReactCompiler = false
+  if (template.includes('react-compiler')) {
+    isReactCompiler = true
+    template = template.replace('-compiler', '')
+  }
 
   const { customCommand } =
     FRAMEWORKS.flatMap((f) => f.variants).find((v) => v.name === template) ?? {}
@@ -521,19 +403,14 @@ async function init() {
     const replacedArgs = args.map((arg) =>
       arg.replace('TARGET_DIR', () => targetDir),
     )
-
-    try {
-      const { status } = spawn.sync(command, replacedArgs, {
-        stdio: 'inherit',
-      })
-      process.exit(status ?? 0)
-    } catch (error) {
-      console.error(`Error executing command: ${fullCustomCommand}`)
-      console.error(error)
-      process.exit(1)
-    }
+    const { status } = spawn.sync(command, replacedArgs, {
+      stdio: 'inherit',
+    })
+    process.exit(status ?? 0)
   }
 
+  // Only create directory for built-in templates, not for customCommand
+  fs.mkdirSync(root, { recursive: true })
   prompts.log.step(`Scaffolding project in ${root}...`)
 
   const templateDir = path.resolve(
@@ -546,6 +423,14 @@ async function init() {
     const targetPath = path.join(root, renameFiles[file] ?? file)
     if (content) {
       fs.writeFileSync(targetPath, content)
+    } else if (file === 'index.html') {
+      const templatePath = path.join(templateDir, file)
+      const templateContent = fs.readFileSync(templatePath, 'utf-8')
+      const updatedContent = templateContent.replace(
+        /<title>.*?<\/title>/,
+        `<title>${packageName}</title>`,
+      )
+      fs.writeFileSync(targetPath, updatedContent)
     } else {
       copy(path.join(templateDir, file), targetPath)
     }
@@ -566,27 +451,26 @@ async function init() {
 
   if (isReactSwc) {
     setupReactSwc(root, template.endsWith('-ts'))
+  } else if (isReactCompiler) {
+    setupReactCompiler(root, template.endsWith('-ts'))
   }
 
-  let doneMessage = ''
-  const cdProjectName = path.relative(cwd, root)
-  doneMessage += `Done. Now run:\n`
-  if (root !== cwd) {
-    doneMessage += `\n  cd ${
-      cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName
-    }`
+  if (immediate) {
+    install(root, pkgManager)
+    start(root, pkgManager)
+  } else {
+    let doneMessage = ''
+    const cdProjectName = path.relative(cwd, root)
+    doneMessage += `Done. Now run:\n`
+    if (root !== cwd) {
+      doneMessage += `\n  cd ${
+        cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName
+      }`
+    }
+    doneMessage += `\n  ${getInstallCommand(pkgManager).join(' ')}`
+    doneMessage += `\n  ${getRunCommand(pkgManager, 'dev').join(' ')}`
+    prompts.outro(doneMessage)
   }
-  switch (pkgManager) {
-    case 'yarn':
-      doneMessage += '\n  yarn'
-      doneMessage += '\n  yarn dev'
-      break
-    default:
-      doneMessage += `\n  ${pkgManager} install`
-      doneMessage += `\n  ${pkgManager} run dev`
-      break
-  }
-  prompts.outro(doneMessage)
 }
 
 function formatTargetDir(targetDir: string) {
@@ -660,7 +544,7 @@ function pkgFromUserAgent(userAgent: string | undefined): PkgInfo | undefined {
 
 function setupReactSwc(root: string, isTs: boolean) {
   // renovate: datasource=npm depName=@vitejs/plugin-react-swc
-  const reactSwcPluginVersion = '3.10.2'
+  const reactSwcPluginVersion = '4.2.2'
 
   editFile(path.resolve(root, 'package.json'), (content) => {
     return content.replace(
@@ -674,6 +558,62 @@ function setupReactSwc(root: string, isTs: boolean) {
       return content.replace('@vitejs/plugin-react', '@vitejs/plugin-react-swc')
     },
   )
+  updateReactCompilerReadme(
+    root,
+    'The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.',
+  )
+}
+
+function setupReactCompiler(root: string, isTs: boolean) {
+  // renovate: datasource=npm depName=babel-plugin-react-compiler
+  const reactCompilerPluginVersion = '1.0.0'
+
+  editFile(path.resolve(root, 'package.json'), (content) => {
+    const asObject = JSON.parse(content)
+    const devDepsEntries = Object.entries(asObject.devDependencies)
+    devDepsEntries.push([
+      'babel-plugin-react-compiler',
+      `^${reactCompilerPluginVersion}`,
+    ])
+    devDepsEntries.sort()
+    asObject.devDependencies = Object.fromEntries(devDepsEntries)
+    return JSON.stringify(asObject, null, 2) + '\n'
+  })
+  editFile(
+    path.resolve(root, `vite.config.${isTs ? 'ts' : 'js'}`),
+    (content) => {
+      return content.replace(
+        '  plugins: [react()],',
+        `  plugins: [
+    react({
+      babel: {
+        plugins: [['babel-plugin-react-compiler']],
+      },
+    }),
+  ],`,
+      )
+    },
+  )
+  updateReactCompilerReadme(
+    root,
+    'The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.\n\nNote: This will impact Vite dev & build performances.',
+  )
+}
+
+function updateReactCompilerReadme(root: string, newBody: string) {
+  editFile(path.resolve(root, `README.md`), (content) => {
+    const h2Start = content.indexOf('## React Compiler')
+    const bodyStart = content.indexOf('\n\n', h2Start)
+    const compilerSectionEnd = content.indexOf('\n## ', bodyStart)
+    if (h2Start === -1 || bodyStart === -1 || compilerSectionEnd === -1) {
+      console.warn('Could not update compiler section in README.md')
+      return content
+    }
+    return content.replace(
+      content.slice(bodyStart + 2, compilerSectionEnd - 1),
+      newBody,
+    )
+  })
 }
 
 function editFile(file: string, callback: (content: string) => string) {
@@ -693,6 +633,10 @@ function getFullCustomCommand(customCommand: string, pkgInfo?: PkgInfo) {
         if (pkgManager === 'bun') {
           return 'bun x create-'
         }
+        // Deno uses `run -A npm:create-` instead of `create` or `init` to also provide needed perms
+        if (pkgManager === 'deno') {
+          return 'deno run -A npm:create-'
+        }
         // pnpm doesn't support the -- syntax
         if (pkgManager === 'pnpm') {
           return 'pnpm create '
@@ -704,48 +648,45 @@ function getFullCustomCommand(customCommand: string, pkgInfo?: PkgInfo) {
       })
       // Only Yarn 1.x doesn't support `@version` in the `create` command
       .replace('@latest', () => (isYarn1 ? '' : '@latest'))
-      .replace(/^npm exec/, () => {
+      .replace(/^npm exec /, () => {
         // Prefer `pnpm dlx`, `yarn dlx`, or `bun x`
         if (pkgManager === 'pnpm') {
-          return 'pnpm dlx'
+          return 'pnpm dlx '
         }
         if (pkgManager === 'yarn' && !isYarn1) {
-          return 'yarn dlx'
+          return 'yarn dlx '
         }
         if (pkgManager === 'bun') {
-          return 'bun x'
+          return 'bun x '
+        }
+        if (pkgManager === 'deno') {
+          return 'deno run -A npm:'
         }
         // Use `npm exec` in all other cases,
         // including Yarn 1.x and other custom npm clients.
-        return 'npm exec'
+        return 'npm exec '
       })
   )
 }
 
-function checkYarnPermissions() {
-  // On Windows, check for common Yarn permission issues
-  if (process.platform === 'win32') {
-    const yarnrcPath = path.join(os.homedir(), '.yarnrc')
-
-    try {
-      if (fs.existsSync(yarnrcPath)) {
-        // Try to read the file to check permissions
-        fs.readFileSync(yarnrcPath, 'utf-8')
-      }
-    } catch (error) {
-      console.warn(colors.yellow('\n⚠️  Warning: Detected potential Yarn permissions issue on Windows.'))
-      console.warn(colors.yellow('If you encounter EPERM errors, try:'))
-      console.warn(colors.yellow('1. Run PowerShell as Administrator'))
-      console.warn(colors.yellow('2. Or use: npm create thulite@latest instead'))
-      console.warn(colors.yellow('3. Or delete the .yarnrc file in your home directory\n'))
-    }
+function getInstallCommand(agent: string) {
+  if (agent === 'yarn') {
+    return [agent]
   }
+  return [agent, 'install']
 }
 
-// Handle help flag synchronously to avoid unnecessary async initialization
-if (argv.help) {
-  console.log(helpMessage)
-  process.exit(0)
+function getRunCommand(agent: string, script: string) {
+  switch (agent) {
+    case 'yarn':
+    case 'pnpm':
+    case 'bun':
+      return [agent, script]
+    case 'deno':
+      return [agent, 'task', script]
+    default:
+      return [agent, 'run', script]
+  }
 }
 
 init().catch((e) => {

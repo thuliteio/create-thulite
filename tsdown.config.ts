@@ -9,6 +9,7 @@ export default defineConfig(() => ({
   entry: ['src/index.ts'],
   target: 'node20',
   minify: true,
+  fixedExtension: false,
   plugins: [
     licensePlugin(
       path.resolve(__dirname, './LICENSE'),

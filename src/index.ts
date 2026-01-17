@@ -634,9 +634,11 @@ function getFullCustomCommand(customCommand: string, pkgInfo?: PkgInfo) {
           return 'bun x create-'
         }
         // Deno uses `run -A npm:create-` instead of `create` or `init` to also provide needed perms
+        /*
         if (pkgManager === 'deno') {
           return 'deno run -A npm:create-'
         }
+        */
         // pnpm doesn't support the -- syntax
         if (pkgManager === 'pnpm') {
           return 'pnpm create '
@@ -659,9 +661,11 @@ function getFullCustomCommand(customCommand: string, pkgInfo?: PkgInfo) {
         if (pkgManager === 'bun') {
           return 'bun x '
         }
+        /*
         if (pkgManager === 'deno') {
           return 'deno run -A npm:'
         }
+        */
         // Use `npm exec` in all other cases,
         // including Yarn 1.x and other custom npm clients.
         return 'npm exec '
@@ -682,8 +686,10 @@ function getRunCommand(agent: string, script: string) {
     case 'pnpm':
     case 'bun':
       return [agent, script]
+    /*
     case 'deno':
       return [agent, 'task', script]
+    */
     default:
       return [agent, 'run', script]
   }

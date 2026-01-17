@@ -36,12 +36,6 @@ pnpm create thulite
 bun create thulite
 ```
 
-### Deno
-
-```bash
-deno init --npm thulite
-```
-
 Then follow the prompts!
 
 ## Options
@@ -70,12 +64,6 @@ pnpm create thulite my-project --template doks
 
 ```bash
 bun create thulite my-project --template doks
-```
-
-### Deno
-
-```bash
-deno init --npm thulite my-project --template doks
 ```
 
 ## Project name
@@ -124,12 +112,6 @@ pnpm create thulite --help
 
 ```bash
 bun create thulite --help
-```
-
-### Deno
-
-```bash
-deno init --npm thulite --help
 ```
 
 ## Troubleshooting

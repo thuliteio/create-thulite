@@ -1,5 +1,11 @@
 # create-thulite
 
+## 2.0.1
+
+### Patch Changes
+
+- [#68](https://github.com/thuliteio/create-thulite/pull/68) [`135234d`](https://github.com/thuliteio/create-thulite/commit/135234db88294b8376bc34115cb794756ae43d29) Thanks [@h-enk](https://github.com/h-enk)! - Drop deno support
+
 ## 2.0.0
 
 ### Major Changes

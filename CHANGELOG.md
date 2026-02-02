@@ -1,5 +1,11 @@
 # create-thulite
 
+## 2.0.2
+
+### Patch Changes
+
+- [#70](https://github.com/thuliteio/create-thulite/pull/70) [`96a2fa3`](https://github.com/thuliteio/create-thulite/commit/96a2fa3e6e988393ca30821fde63986a6822411a) Thanks [@h-enk](https://github.com/h-enk)! - Update template variants
+
 ## 2.0.1
 
 ### Patch Changes

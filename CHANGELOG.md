@@ -1,5 +1,11 @@
 # create-thulite
 
+## 2.1.0
+
+### Minor Changes
+
+- [#71](https://github.com/thuliteio/create-thulite/pull/71) [`002d53b`](https://github.com/thuliteio/create-thulite/commit/002d53b95f61390b8e4a3e307db69dcfdcc6a0e4) Thanks [@h-enk](https://github.com/h-enk)! - Update template-doks for Doks v1.9.0
+
 ## 2.0.2
 
 ### Patch Changes

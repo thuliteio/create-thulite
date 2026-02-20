@@ -237,9 +237,10 @@ async function init() {
         defaultValue: defaultTargetDir,
         placeholder: defaultTargetDir,
         validate: (value) => {
-          return value.length === 0 || formatTargetDir(value).length > 0
-            ? undefined
-            : 'Invalid project name'
+          if (!value || value.length === 0 || formatTargetDir(value).length > 0) {
+            return undefined
+          }
+          return 'Invalid project name'
         },
       })
       if (prompts.isCancel(projectName)) return cancel()
@@ -303,9 +304,10 @@ async function init() {
         defaultValue: toValidPackageName(packageName),
         placeholder: toValidPackageName(packageName),
         validate(dir) {
-          if (!isValidPackageName(dir)) {
+          if (!dir || !isValidPackageName(dir)) {
             return 'Invalid package.json name'
           }
+          return undefined
         },
       })
       if (prompts.isCancel(packageNameResult)) return cancel()

@@ -28,28 +28,29 @@ const createNonEmptyDir = (overrideFolder?: string) => {
   fs.writeFileSync(pkgJson, '{ "foo": "bar" }')
 }
 
-// Basic starter template
-const templateFiles = fs
-  .readdirSync(path.join(CLI_PATH, 'template-basic'))
-  // _gitignore is renamed to .gitignore, _npmignore to .npmignore, _npmrc to .npmrc
-  .map((filePath) => {
-    if (filePath === '_gitignore') return '.gitignore'
-    if (filePath === '_npmignore') return '.npmignore'
-    if (filePath === '_npmrc') return '.npmrc'
-    return filePath
-  })
-  .sort()
+// Helper to get template files with proper renaming
+const getTemplateFiles = (templateName: string) => {
+  return fs
+    .readdirSync(path.join(CLI_PATH, `template-${templateName}`))
+    // _gitignore is renamed to .gitignore, _npmignore to .npmignore, _npmrc to .npmrc
+    .map((filePath) => {
+      if (filePath === '_gitignore') return '.gitignore'
+      if (filePath === '_npmignore') return '.npmignore'
+      if (filePath === '_npmrc') return '.npmrc'
+      return filePath
+    })
+    .sort()
+}
 
-// Doks starter template
-const templateFilesDoks = fs
-  .readdirSync(path.join(CLI_PATH, 'template-doks'))
-  .map((filePath) => {
-    if (filePath === '_gitignore') return '.gitignore'
-    if (filePath === '_npmignore') return '.npmignore'
-    if (filePath === '_npmrc') return '.npmrc'
-    return filePath
-  })
-  .sort()
+// Template file lists
+const templateFiles = getTemplateFiles('basic')
+const templateFilesDoks = getTemplateFiles('doks')
+const templateFilesBolt = getTemplateFiles('bolt')
+const templateFilesTailwindcss = getTemplateFiles('tailwindcss')
+const templateFilesTailwindcssRec = getTemplateFiles('tailwindcss-rec')
+const templateFilesBootstrap = getTemplateFiles('bootstrap')
+const templateFilesBootstrapRec = getTemplateFiles('bootstrap-rec')
+const templateFilesBasicRec = getTemplateFiles('basic-rec')
 
 const clearAnyPreviousFolders = () => {
   if (fs.existsSync(genPath)) {
@@ -236,4 +237,88 @@ test('accepts immediate flag and skips install prompt', () => {
   expect(stdout).not.toContain('Install and start now?')
   expect(stdout).not.toContain('Installing dependencies')
   expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+})
+
+test('successfully scaffolds a project based on bolt starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'bolt'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesBolt).toEqual(generatedFiles)
+})
+
+test('successfully scaffolds a project based on tailwindcss starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'tailwindcss'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesTailwindcss).toEqual(generatedFiles)
+})
+
+test('successfully scaffolds a project based on tailwindcss-rec starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'tailwindcss-rec'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesTailwindcssRec).toEqual(generatedFiles)
+})
+
+test('successfully scaffolds a project based on bootstrap starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'bootstrap'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesBootstrap).toEqual(generatedFiles)
+})
+
+test('successfully scaffolds a project based on bootstrap-rec starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'bootstrap-rec'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesBootstrapRec).toEqual(generatedFiles)
+})
+
+test('successfully scaffolds a project based on basic-rec starter template', () => {
+  const { stdout } = run(
+    [projectName, '--interactive', '--no-immediate', '--template', 'basic-rec'],
+    {
+      cwd: __dirname,
+    },
+  )
+  const generatedFiles = fs.readdirSync(genPath).sort()
+
+  // Assertions
+  expect(stdout).toContain(`Scaffolding project in ${genPath}`)
+  expect(templateFilesBasicRec).toEqual(generatedFiles)
 })

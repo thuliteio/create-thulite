@@ -13,7 +13,11 @@
   },
   "dependencies": {
     "@thulite/bootstrap": "^1.2.3",
-    "thulite": "^2.6.4"
+    "thulite": "^2.6.5"
+  },
+  "overrides": {
+      "minimatch": "^10.2.2",
+      "glob": "^13.0.6"
   },
   "devDependencies": {
     "prettier": "^3.8.1",

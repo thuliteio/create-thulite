@@ -1,5 +1,11 @@
 # create-thulite
 
+## 2.1.1
+
+### Patch Changes
+
+- [#72](https://github.com/thuliteio/create-thulite/pull/72) [`3a1e78c`](https://github.com/thuliteio/create-thulite/commit/3a1e78cedbf6993659d4af1ee05692d3054da9b9) Thanks [@h-enk](https://github.com/h-enk)! - Update templates for security fix, Netlify fix, Hugo v0.156.0, and update dependencies
+
 ## 2.1.0
 
 ### Minor Changes

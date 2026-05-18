@@ -1,5 +1,11 @@
 # create-thulite
 
+## 2.1.2
+
+### Patch Changes
+
+- [#76](https://github.com/thuliteio/create-thulite/pull/76) [`6f1242c`](https://github.com/thuliteio/create-thulite/commit/6f1242cab0b01b96430d9656ef796e8d9c0ac627) Thanks [@h-enk](https://github.com/h-enk)! - Add thuliteio.hugo-shortcodes to .vscode/extensions.json templates
+
 ## 2.1.1
 
 ### Patch Changes

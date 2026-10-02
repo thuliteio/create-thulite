@@ -31,19 +31,19 @@
   },
   "homepage": "https://github.com/thuliteio/create-thulite",
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.7",
-    "@clack/prompts": "^1.0.1",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@clack/prompts": "^1.8.1",
     "@types/cross-spawn": "^6.0.6",
-    "@types/node": "^25.3.0",
-    "@vercel/detect-agent": "^1.0.0",
+    "@types/node": "^26.6.4",
+    "@vercel/detect-agent": "^1.2.5",
     "cross-spawn": "^7.0.6",
-    "execa": "^9.6.0",
+    "execa": "^10.0.1",
     "mri": "^1.2.0",
     "picocolors": "^1.1.1",
     "rollup-plugin-license": "^3.7.0",
-    "tsdown": "^0.20.3",
-    "vitest": "^4.0.17"
+    "tsdown": "^0.23.0",
+    "vitest": "^5.0.3"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

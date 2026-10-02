@@ -15,7 +15,7 @@
   "dependencies": {
     "@thulite/images": "^3.3.4",
     "@thulite/seo": "^2.4.4",
-    "thulite": "^3.0.2"
+    "thulite": "^3.0.3"
   },
   "overrides": {
     "minimatch": "^10.2.6",

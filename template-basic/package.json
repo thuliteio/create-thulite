@@ -13,7 +13,7 @@
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
-    "thulite": "^3.0.2"
+    "thulite": "^3.0.3"
   },
   "overrides": {
     "minimatch": "^10.2.6",

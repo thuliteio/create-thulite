@@ -1,5 +1,11 @@
 # create-thulite
 
+## 3.0.1
+
+### Patch Changes
+
+- [#79](https://github.com/thuliteio/create-thulite/pull/79) [`d77ebc9`](https://github.com/thuliteio/create-thulite/commit/d77ebc95df209296383c47776d2ec9a861a3efb0) Thanks [@h-enk](https://github.com/h-enk)! - fix: update Content-Security-Policy to include additional hash for script-src
+
 ## 3.0.0
 
 ### Major Changes
